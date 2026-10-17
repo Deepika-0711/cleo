@@ -231,7 +231,7 @@ export const CleoNoticesYou: React.FC<CleoNoticesYouProps> = ({ isMoonlight }) =
           <img
             src={cleoCharacterImg}
             alt="Cleo — Adorable 3D storybook girl with voluminous chestnut curls, ocean seashell crown, and vintage cream lace dress"
-            className={`relative z-10 w-32 sm:w-44 md:w-56 lg:w-64 h-auto object-contain transition-all duration-500 group-hover:scale-105 ${
+            className={`relative z-10 w-28 sm:w-40 md:w-52 lg:w-60 max-h-[82%] h-auto object-contain transition-all duration-500 group-hover:scale-105 ${
               isMoonlight
                 ? 'brightness-[0.88] contrast-[1.05] hue-rotate-[195deg]'
                 : 'brightness-100 contrast-100'

@@ -1,0 +1,545 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="100%" height="100%" role="img" aria-labelledby="cleo-doll-title cleo-doll-desc">
+  <title id="cleo-doll-title">Cleo — The Shell Collector Girl (Ultra-Cute 3D Collectible Doll Edition)</title>
+  <desc id="cleo-doll-desc">An ultra-adorable 3D collectible storybook doll of Cleo with an oversized baby doll head, enormous glossy chocolate eyes, voluminous cascading curls, an authentic seashell crown, and a vintage cream dress with curtsy pose and crossed feet.</desc>
+
+  <defs>
+    <!-- Skin 3D Shading Gradients -->
+    <radialGradient id="dollFaceGrad" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#FFF8F2"/>
+      <stop offset="60%" stop-color="#FDE8DB"/>
+      <stop offset="90%" stop-color="#F7D3C1"/>
+      <stop offset="100%" stop-color="#EBC0AC"/>
+    </radialGradient>
+    <linearGradient id="bodySkinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF6F0"/>
+      <stop offset="100%" stop-color="#FAD7C3"/>
+    </linearGradient>
+
+    <!-- Hair: Rich Chestnut with Caramel Glow -->
+    <radialGradient id="curlHighlightGrad" cx="40%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#A56740"/>
+      <stop offset="45%" stop-color="#703B20"/>
+      <stop offset="85%" stop-color="#462010"/>
+      <stop offset="100%" stop-color="#2A1107"/>
+    </radialGradient>
+    <linearGradient id="hairBaseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6E3A20"/>
+      <stop offset="50%" stop-color="#4B2312"/>
+      <stop offset="100%" stop-color="#2D1308"/>
+    </linearGradient>
+
+    <!-- Enormous Chocolate-Brown Eyes -->
+    <radialGradient id="irisGrad" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#552614"/>
+      <stop offset="40%" stop-color="#361509"/>
+      <stop offset="85%" stop-color="#1E0B04"/>
+      <stop offset="100%" stop-color="#120602"/>
+    </radialGradient>
+    <linearGradient id="irisReflectGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D98A55" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#D98A55" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FFBD85"/>
+    </linearGradient>
+
+    <!-- Rosy Cheek Doll Blush -->
+    <radialGradient id="cheekBlush" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF7F85" stop-opacity="0.7"/>
+      <stop offset="55%" stop-color="#FF9EA2" stop-opacity="0.35"/>
+      <stop offset="85%" stop-color="#FFBDBF" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#FFC5C5" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Dress: Vintage Warm Ivory & Lace -->
+    <linearGradient id="ivorySilkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="30%" stop-color="#FBF6EC"/>
+      <stop offset="70%" stop-color="#F2E7D3"/>
+      <stop offset="100%" stop-color="#E5D6BD"/>
+    </linearGradient>
+    <linearGradient id="skirtShadowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EADECA"/>
+      <stop offset="100%" stop-color="#D3C1A5"/>
+    </linearGradient>
+
+    <!-- Champagne Gold Ribbon -->
+    <linearGradient id="champagneGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF2C6"/>
+      <stop offset="35%" stop-color="#E9C778"/>
+      <stop offset="75%" stop-color="#C89D42"/>
+      <stop offset="100%" stop-color="#9C7323"/>
+    </linearGradient>
+
+    <!-- Realistic Seashell & Pearl Materials -->
+    <linearGradient id="ivoryShell" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="45%" stop-color="#FAF1E3"/>
+      <stop offset="85%" stop-color="#E3D2BA"/>
+      <stop offset="100%" stop-color="#C5B094"/>
+    </linearGradient>
+    <radialGradient id="pearlShimmer" cx="30%" cy="30%" r="68%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="35%" stop-color="#FCF8F2"/>
+      <stop offset="70%" stop-color="#E7DDF4"/>
+      <stop offset="95%" stop-color="#CDECE3"/>
+      <stop offset="100%" stop-color="#B2DCD0"/>
+    </radialGradient>
+
+    <!-- Soft Drop Shadow Filter for 3D depth -->
+    <filter id="dollShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#2D1308" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- GROUND SHADOW (Doll casting soft shadow under crossed feet) -->
+  <g id="ground-shadow">
+    <ellipse cx="305" cy="840" rx="95" ry="14" fill="#2A1409" opacity="0.14"/>
+    <ellipse cx="302" cy="839" rx="55" ry="8" fill="#2A1409" opacity="0.22"/>
+  </g>
+
+  <!-- MAIN CHARACTER ROOT -->
+  <g id="cleo-doll-character" filter="url(#dollShadow)">
+
+    <!-- 1. MASSIVE VOLUMINOUS CASCADING BACK CURLS -->
+    <g id="hair-back-volume">
+      <!-- Outer wide curly silhouette -->
+      <path d="M190,260 
+               C80,210 40,320 50,460 
+               C60,570 120,660 210,660 
+               C235,660 255,630 270,590 
+               C300,605 330,605 355,590 
+               C370,630 395,660 420,660 
+               C505,660 560,570 570,460 
+               C580,320 540,210 430,260 
+               C470,140 390,60 300,60 
+               C210,60 150,140 190,260 Z"
+            fill="url(#hairBaseGrad)" stroke="#220D04" stroke-width="3"/>
+
+      <!-- Dimensional Left Cascading Ringlet Clouds -->
+      <g id="left-ringlet-clusters">
+        <path d="M70,400 C45,450 60,520 100,550 C125,565 140,540 125,500 C110,460 125,420 145,395"
+              fill="url(#curlHighlightGrad)" stroke="#220D04" stroke-width="2.5"/>
+        <path d="M95,450 C70,510 95,575 140,595 C165,605 175,570 150,535 C130,500 150,465 170,440"
+              fill="url(#curlHighlightGrad)" stroke="#220D04" stroke-width="2.5"/>
+        <path d="M130,520 C115,580 150,635 195,625 C215,620 215,590 190,560"
+              fill="url(#curlHighlightGrad)" stroke="#220D04" stroke-width="2.5"/>
+      </g>
+
+      <!-- Dimensional Right Cascading Ringlet Clouds -->
+      <g id="right-ringlet-clusters">
+        <path d="M545,400 C570,450 555,520 515,550 C490,565 475,540 490,500 C505,460 490,420 470,395"
+              fill="url(#curlHighlightGrad)" stroke="#220D04" stroke-width="2.5"/>
+        <path d="M520,450 C545,510 520,575 475,595 C450,605 440,570 465,535 C485,500 465,465 445,440"
+              fill="url(#curlHighlightGrad)" stroke="#220D04" stroke-width="2.5"/>
+        <path d="M485,520 C500,580 465,635 420,625 C400,620 400,590 425,560"
+              fill="url(#curlHighlightGrad)" stroke="#220D04" stroke-width="2.5"/>
+      </g>
+    </g>
+
+    <!-- 2. DAINTY CROSSED LEGS & CREAM MARY JANE SHOES -->
+    <g id="crossed-legs-and-shoes">
+      <!-- Back Leg (Right leg slightly back) -->
+      <g id="leg-back-right">
+        <path d="M312,710 L322,780 C322,786 335,786 335,780 L328,710 Z" fill="url(#bodySkinGrad)" stroke="#260E05" stroke-width="2.5"/>
+        <!-- Ruffled Lace Sock -->
+        <path d="M315,770 Q325,765 335,770 L336,785 Q325,788 316,785 Z" fill="#FFFFFF" stroke="#260E05" stroke-width="2"/>
+        <path d="M313,770 Q325,764 337,770" fill="none" stroke="#D1BEA4" stroke-width="2" stroke-linecap="round"/>
+        <!-- Cream Mary Jane Shoe -->
+        <path d="M316,784 C316,778 340,778 342,785 L345,804 C346,815 338,820 326,820 C310,820 310,810 314,800 Z"
+              fill="url(#ivorySilkGrad)" stroke="#260E05" stroke-width="2.5" stroke-linejoin="round"/>
+        <!-- Shell Buckle -->
+        <circle cx="334" cy="792" r="3.2" fill="url(#ivoryShell)" stroke="#260E05" stroke-width="1.2"/>
+        <circle cx="334" cy="792" r="1.2" fill="#FFFFFF"/>
+      </g>
+
+      <!-- Front Crossed Leg (Left leg stepping gracefully across) -->
+      <g id="leg-front-left">
+        <path d="M285,710 L292,785 C292,792 308,792 308,785 L300,710 Z" fill="url(#bodySkinGrad)" stroke="#260E05" stroke-width="2.5"/>
+        <!-- Folded Lace Sock with Scallop Trim -->
+        <path d="M288,775 Q298,770 310,775 L310,792 Q298,795 289,792 Z" fill="#FFFFFF" stroke="#260E05" stroke-width="2"/>
+        <path d="M287,775 Q292,771 298,775 Q304,771 311,775" fill="none" stroke="#D1BEA4" stroke-width="2"/>
+        <!-- Front Cream Mary Jane Shoe -->
+        <path d="M288,792 C290,784 314,784 316,792 L320,814 C322,826 312,832 298,832 C282,832 280,820 285,808 Z"
+              fill="url(#ivorySilkGrad)" stroke="#260E05" stroke-width="2.5" stroke-linejoin="round"/>
+        <!-- Strap & Miniature Scallop Detail -->
+        <path d="M289,798 Q302,804 317,798" fill="none" stroke="#260E05" stroke-width="2"/>
+        <path d="M303,797 Q306,793 309,797 Q308,801 305,801 Z" fill="url(#ivoryShell)" stroke="#260E05" stroke-width="1"/>
+        <circle cx="306" cy="798" r="1" fill="#FFFFFF"/>
+      </g>
+    </g>
+
+    <!-- 3. VINTAGE WARM-IVORY DRESS (FLOWING SKIRT HELD IN CURTSY) -->
+    <g id="cleo-dress-and-curtsy">
+      <!-- Wide Layered Flowing Skirt (Spread gently by her hands) -->
+      <g id="layered-skirt">
+        <!-- Underskirt Scallop Lace Hem -->
+        <path d="M185,690 
+                 C220,725 260,735 300,735 
+                 C340,735 380,725 415,690 
+                 L425,710 
+                 C385,745 345,755 300,755 
+                 C255,755 215,745 175,710 Z"
+              fill="#FFFFFF" stroke="#260E05" stroke-width="2"/>
+        <!-- Underskirt Lace Picot Dots -->
+        <path d="M180,712 Q190,720 200,715 Q210,724 220,718 Q230,727 240,722 Q250,730 260,726 Q270,734 280,730 Q290,736 300,736 Q310,736 320,730 Q330,734 340,726 Q350,730 360,722 Q370,727 380,718 Q390,724 400,715 Q410,720 420,712"
+              fill="none" stroke="#CBBBA1" stroke-width="1.8"/>
+
+        <!-- Main Flowing Ivory Skirt Body -->
+        <path d="M245,550 
+                 C220,575 175,630 165,685 
+                 C205,715 250,725 300,725 
+                 C350,725 395,715 435,685 
+                 C425,630 380,575 355,550 Z"
+              fill="url(#ivorySilkGrad)" stroke="#260E05" stroke-width="3" stroke-linejoin="round"/>
+
+        <!-- Natural Fabric Folds -->
+        <path d="M250,555 C230,600 205,650 195,690" fill="none" stroke="#D1BEA4" stroke-width="3" stroke-linecap="round"/>
+        <path d="M350,555 C370,600 395,650 405,690" fill="none" stroke="#D1BEA4" stroke-width="3" stroke-linecap="round"/>
+        <path d="M280,560 C275,615 268,665 260,715" fill="none" stroke="#D1BEA4" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M320,560 C325,615 332,665 340,715" fill="none" stroke="#D1BEA4" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- Intricate Seashell & Pearl Hem Border Clusters -->
+        <!-- Center Scallop Motif -->
+        <g id="hem-shell-center" transform="translate(300, 715)">
+          <path d="M-15,4 C-20,-10 0,-18 15,-10 C20,4 8,8 -15,4 Z" fill="url(#ivoryShell)" stroke="#260E05" stroke-width="1.8"/>
+          <path d="M0,-16 L0,6 M-7,-12 L-4,6 M7,-12 L4,6" stroke="#B8A484" stroke-width="1.2"/>
+          <circle cx="0" cy="6" r="3.5" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="1"/>
+          <circle cx="-8" cy="7" r="2.2" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="0.8"/>
+          <circle cx="8" cy="7" r="2.2" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="0.8"/>
+        </g>
+        <!-- Left Scallop Cluster 1 -->
+        <g id="hem-shell-left-1" transform="translate(250, 710) rotate(-10)">
+          <path d="M-12,3 C-16,-8 0,-15 12,-8 C16,3 6,7 -12,3 Z" fill="url(#ivoryShell)" stroke="#260E05" stroke-width="1.8"/>
+          <circle cx="0" cy="5" r="2.8" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="1"/>
+        </g>
+        <!-- Left Scallop Cluster 2 -->
+        <g id="hem-shell-left-2" transform="translate(205, 698) rotate(-22)">
+          <path d="M-10,2 C-13,-6 0,-12 10,-6 C13,2 5,6 -10,2 Z" fill="url(#ivoryShell)" stroke="#260E05" stroke-width="1.5"/>
+          <circle cx="0" cy="4" r="2.2" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="0.8"/>
+        </g>
+        <!-- Right Scallop Cluster 1 -->
+        <g id="hem-shell-right-1" transform="translate(350, 710) rotate(10)">
+          <path d="M-12,3 C-16,-8 0,-15 12,-8 C16,3 6,7 -12,3 Z" fill="url(#ivoryShell)" stroke="#260E05" stroke-width="1.8"/>
+          <circle cx="0" cy="5" r="2.8" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="1"/>
+        </g>
+        <!-- Right Scallop Cluster 2 -->
+        <g id="hem-shell-right-2" transform="translate(395, 698) rotate(22)">
+          <path d="M-10,2 C-13,-6 0,-12 10,-6 C13,2 5,6 -10,2 Z" fill="url(#ivoryShell)" stroke="#260E05" stroke-width="1.5"/>
+          <circle cx="0" cy="4" r="2.2" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="0.8"/>
+        </g>
+
+        <!-- Pearl String along entire hem -->
+        <circle cx="178" cy="690" r="2" fill="url(#pearlShimmer)" stroke="#B8A484" stroke-width="0.6"/>
+        <circle cx="228" cy="705" r="2.2" fill="url(#pearlShimmer)" stroke="#B8A484" stroke-width="0.6"/>
+        <circle cx="275" cy="714" r="2.5" fill="url(#pearlShimmer)" stroke="#B8A484" stroke-width="0.6"/>
+        <circle cx="325" cy="714" r="2.5" fill="url(#pearlShimmer)" stroke="#B8A484" stroke-width="0.6"/>
+        <circle cx="372" cy="705" r="2.2" fill="url(#pearlShimmer)" stroke="#B8A484" stroke-width="0.6"/>
+        <circle cx="422" cy="690" r="2" fill="url(#pearlShimmer)" stroke="#B8A484" stroke-width="0.6"/>
+      </g>
+
+      <!-- Fitted Bodice & Scalloped Lace Collar -->
+      <g id="fitted-bodice">
+        <path d="M255,475 L345,475 L352,550 L248,550 Z" fill="url(#ivorySilkGrad)" stroke="#260E05" stroke-width="2.5"/>
+
+        <!-- Scalloped Lace Peter-Pan Collar -->
+        <path d="M300,478 C285,478 260,484 254,498 C260,508 282,506 300,490 Z" fill="#FFFFFF" stroke="#260E05" stroke-width="2"/>
+        <path d="M300,478 C315,478 340,484 346,498 C340,508 318,506 300,490 Z" fill="#FFFFFF" stroke="#260E05" stroke-width="2"/>
+        <!-- Shell Brooch at Center Neckline -->
+        <path d="M294,488 C290,482 310,482 306,488 C310,496 290,496 294,488 Z" fill="url(#ivoryShell)" stroke="#260E05" stroke-width="1.5"/>
+        <circle cx="300" cy="490" r="2" fill="url(#pearlShimmer)"/>
+
+        <!-- Fine Bodice Shell Embroidery Ridges -->
+        <path d="M275,502 L272,548 M325,502 L328,548" stroke="#D1BEA4" stroke-width="1.8" stroke-dasharray="3,3"/>
+      </g>
+
+      <!-- Champagne-Gold Waist Ribbon & Bow -->
+      <g id="waist-gold-ribbon">
+        <rect x="246" y="544" width="108" height="12" rx="3" fill="url(#champagneGold)" stroke="#260E05" stroke-width="2"/>
+        <!-- Center Bow Knot with Pearl -->
+        <ellipse cx="300" cy="550" rx="6" ry="5" fill="url(#champagneGold)" stroke="#260E05" stroke-width="2"/>
+        <circle cx="300" cy="550" r="2.2" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="0.8"/>
+        <!-- Left & Right Bow Loops -->
+        <path d="M300,550 C288,538 268,540 272,552 C276,560 296,554 300,550 Z" fill="url(#champagneGold)" stroke="#260E05" stroke-width="1.8"/>
+        <path d="M300,550 C312,538 332,540 328,552 C324,560 304,554 300,550 Z" fill="url(#champagneGold)" stroke="#260E05" stroke-width="1.8"/>
+        <!-- Flowing Ribbon Streamers -->
+        <path d="M297,554 C292,570 285,586 280,600 C286,596 292,593 298,565 Z" fill="url(#champagneGold)" stroke="#260E05" stroke-width="1.5"/>
+        <path d="M303,554 C308,570 315,586 320,600 C314,596 308,593 302,565 Z" fill="url(#champagneGold)" stroke="#260E05" stroke-width="1.5"/>
+      </g>
+    </g>
+
+    <!-- 4. DAINTY DOLL ARMS HOLDING SKIRT SIDES (PLAYFUL CURTSY POSE) -->
+    <g id="curtsy-arms">
+      <!-- Left Puff Sleeve with Shell Ornament -->
+      <g id="sleeve-left">
+        <ellipse cx="228" cy="510" rx="28" ry="24" transform="rotate(-15 228 510)"
+                 fill="url(#ivorySilkGrad)" stroke="#260E05" stroke-width="2.5"/>
+        <!-- Sleeve Shell Cluster -->
+        <path d="M214,506 Q220,498 226,506 Q222,514 216,512 Z" fill="url(#ivoryShell)" stroke="#260E05" stroke-width="1.2"/>
+        <circle cx="210" cy="512" r="2.5" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="0.8"/>
+        <circle cx="230" cy="508" r="2" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="0.8"/>
+      </g>
+
+      <!-- Left Delicate Doll Arm extending down to hold skirt -->
+      <path d="M225,526 C215,565 195,620 185,655" fill="none" stroke="url(#bodySkinGrad)" stroke-width="18" stroke-linecap="round"/>
+      <path d="M225,526 C215,565 195,620 185,655" fill="none" stroke="#260E05" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Left Dainty Doll Hand grasping skirt edge -->
+      <circle cx="184" cy="658" r="9" fill="url(#bodySkinGrad)" stroke="#260E05" stroke-width="2.2"/>
+      <path d="M178,655 Q185,660 190,654" fill="none" stroke="#260E05" stroke-width="1.5"/>
+
+      <!-- Right Puff Sleeve with Shell Ornament -->
+      <g id="sleeve-right">
+        <ellipse cx="372" cy="510" rx="28" ry="24" transform="rotate(15 372 510)"
+                 fill="url(#ivorySilkGrad)" stroke="#260E05" stroke-width="2.5"/>
+        <!-- Sleeve Shell Cluster -->
+        <path d="M386,506 Q380,498 374,506 Q378,514 384,512 Z" fill="url(#ivoryShell)" stroke="#260E05" stroke-width="1.2"/>
+        <circle cx="390" cy="512" r="2.5" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="0.8"/>
+        <circle cx="370" cy="508" r="2" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="0.8"/>
+      </g>
+
+      <!-- Right Delicate Doll Arm extending down to hold skirt -->
+      <path d="M375,526 C385,565 405,620 415,655" fill="none" stroke="url(#bodySkinGrad)" stroke-width="18" stroke-linecap="round"/>
+      <path d="M375,526 C385,565 405,620 415,655" fill="none" stroke="#260E05" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Right Dainty Doll Hand grasping skirt edge -->
+      <circle cx="416" cy="658" r="9" fill="url(#bodySkinGrad)" stroke="#260E05" stroke-width="2.2"/>
+      <path d="M422,655 Q415,660 410,654" fill="none" stroke="#260E05" stroke-width="1.5"/>
+    </g>
+
+    <!-- 5. OVERSIZED CHIBI DOLL HEAD & EXQUISITE SCULPTED FACE -->
+    <g id="chibi-doll-head">
+      <!-- Petite Neck -->
+      <rect x="288" y="440" width="24" height="28" rx="8" fill="url(#bodySkinGrad)" stroke="#260E05" stroke-width="2.5"/>
+
+      <!-- Adorable Oversized Baby-Doll Head Contour (Chubby cheeks, round chin) -->
+      <path id="doll-face-contour"
+            d="M185,320 
+               C170,380 185,445 235,470 
+               C262,482 338,482 365,470 
+               C415,445 430,380 415,320 
+               C408,240 375,190 300,190 
+               C225,190 192,240 185,320 Z"
+            fill="url(#dollFaceGrad)" stroke="#260E05" stroke-width="3.5" stroke-linejoin="round"/>
+
+      <!-- Cute Blushing Doll Ears with Pearl Studs -->
+      <g id="doll-ears">
+        <!-- Left Ear -->
+        <ellipse cx="180" cy="340" rx="13" ry="17" fill="url(#dollFaceGrad)" stroke="#260E05" stroke-width="2.5"/>
+        <ellipse cx="180" cy="340" rx="6" ry="9" fill="#FFA5A5" opacity="0.6"/>
+        <circle cx="183" cy="345" r="2.8" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="0.8"/>
+        <!-- Right Ear -->
+        <ellipse cx="420" cy="340" rx="13" ry="17" fill="url(#dollFaceGrad)" stroke="#260E05" stroke-width="2.5"/>
+        <ellipse cx="420" cy="340" rx="6" ry="9" fill="#FFA5A5" opacity="0.6"/>
+        <circle cx="417" cy="345" r="2.8" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="0.8"/>
+      </g>
+
+      <!-- ADORABLE FACIAL FEATURES (ENORMOUS EYES ARE VISUAL FOCAL POINT) -->
+      <g id="facial-features">
+
+        <!-- Large, Soft Rosy Cheeks (Chubby doll blush) -->
+        <g id="doll-blush">
+          <ellipse cx="218" cy="375" rx="32" ry="20" fill="url(#cheekBlush)"/>
+          <ellipse cx="382" cy="375" rx="32" ry="20" fill="url(#cheekBlush)"/>
+        </g>
+
+        <!-- ENORMOUS, ROUND, GLOSSY CHOCOLATE-BROWN EYES -->
+        <g id="enormous-chocolate-eyes">
+
+          <!-- LEFT EYE -->
+          <g id="left-eye-group">
+            <!-- White Sclera with subtle 3D shadow -->
+            <ellipse cx="242" cy="335" rx="30" ry="35" fill="#FFFFFF" stroke="#260E05" stroke-width="3"/>
+            <!-- Sclera upper lid soft shadow -->
+            <path d="M214,325 C230,312 258,312 270,325 C258,320 230,320 214,325 Z" fill="#D3C1B5" opacity="0.5"/>
+
+            <!-- Huge Chocolate-Brown Iris -->
+            <ellipse cx="245" cy="336" rx="25" ry="31" fill="url(#irisGrad)"/>
+            
+            <!-- Warm Amber/Caramel Lower Iris Arc Reflection -->
+            <path d="M228,348 C235,362 258,362 265,348" fill="none" stroke="url(#irisReflectGrad)" stroke-width="4.5" stroke-linecap="round"/>
+
+            <!-- Deep Espresso Pupil -->
+            <ellipse cx="245" cy="336" rx="14" ry="18" fill="#0C0401"/>
+
+            <!-- Multiple Specular Catchlights (Gives ultra-glossy 3D doll look) -->
+            <!-- Primary Giant Sparkle Highlight -->
+            <circle cx="236" cy="322" r="10.5" fill="#FFFFFF"/>
+            <!-- Secondary Starry Twinkle Catchlight -->
+            <circle cx="258" cy="348" r="5" fill="#FFFFFF"/>
+            <!-- Tertiary Miniature Rim Dot -->
+            <circle cx="250" cy="318" r="3" fill="#FFFFFF"/>
+
+            <!-- Sculpted Curled Doll Eyelashes & Upper Lid -->
+            <path d="M212,324 C224,298 266,298 276,322" fill="none" stroke="#220B03" stroke-width="5" stroke-linecap="round"/>
+            <!-- Individual Delicate Eyelash Flicks -->
+            <path d="M272,315 Q282,306 284,316" fill="none" stroke="#220B03" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M260,305 Q268,294 270,305" fill="none" stroke="#220B03" stroke-width="3" stroke-linecap="round"/>
+            <path d="M214,320 Q205,312 203,322" fill="none" stroke="#220B03" stroke-width="3" stroke-linecap="round"/>
+          </g>
+
+          <!-- RIGHT EYE -->
+          <g id="right-eye-group">
+            <!-- White Sclera with subtle 3D shadow -->
+            <ellipse cx="358" cy="335" rx="30" ry="35" fill="#FFFFFF" stroke="#260E05" stroke-width="3"/>
+            <!-- Sclera upper lid soft shadow -->
+            <path d="M330,325 C342,312 370,312 386,325 C370,320 342,320 330,325 Z" fill="#D3C1B5" opacity="0.5"/>
+
+            <!-- Huge Chocolate-Brown Iris -->
+            <ellipse cx="355" cy="336" rx="25" ry="31" fill="url(#irisGrad)"/>
+            
+            <!-- Warm Amber/Caramel Lower Iris Arc Reflection -->
+            <path d="M338,348 C345,362 368,362 375,348" fill="none" stroke="url(#irisReflectGrad)" stroke-width="4.5" stroke-linecap="round"/>
+
+            <!-- Deep Espresso Pupil -->
+            <ellipse cx="355" cy="336" rx="14" ry="18" fill="#0C0401"/>
+
+            <!-- Multiple Specular Catchlights -->
+            <!-- Primary Giant Sparkle Highlight -->
+            <circle cx="346" cy="322" r="10.5" fill="#FFFFFF"/>
+            <!-- Secondary Starry Twinkle Catchlight -->
+            <circle cx="368" cy="348" r="5" fill="#FFFFFF"/>
+            <!-- Tertiary Miniature Rim Dot -->
+            <circle cx="360" cy="318" r="3" fill="#FFFFFF"/>
+
+            <!-- Sculpted Curled Doll Eyelashes & Upper Lid -->
+            <path d="M324,322 C334,298 376,298 388,324" fill="none" stroke="#220B03" stroke-width="5" stroke-linecap="round"/>
+            <!-- Individual Delicate Eyelash Flicks -->
+            <path d="M382,315 Q392,306 394,316" fill="none" stroke="#220B03" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M372,305 Q380,294 382,305" fill="none" stroke="#220B03" stroke-width="3" stroke-linecap="round"/>
+            <path d="M326,320 Q317,312 315,322" fill="none" stroke="#220B03" stroke-width="3" stroke-linecap="round"/>
+          </g>
+
+          <!-- Delicate, Sweet Eyebrows (Gentle innocent arch) -->
+          <g id="innocent-eyebrows">
+            <path d="M222,290 C234,275 258,278 268,288" fill="none" stroke="#462010" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M332,288 C342,278 366,275 378,290" fill="none" stroke="#462010" stroke-width="3.5" stroke-linecap="round"/>
+          </g>
+        </g>
+
+        <!-- Tiny Sculpted Button Nose -->
+        <g id="tiny-button-nose">
+          <ellipse cx="300" cy="360" rx="3.5" ry="2.5" fill="#E28670"/>
+          <circle cx="299" cy="359" r="1" fill="#FFFFFF" opacity="0.7"/>
+        </g>
+
+        <!-- Delicate Sweet Smiling Doll Mouth -->
+        <g id="sweet-doll-mouth">
+          <!-- Soft Cupids Bow Upper Lip & Smile Curve -->
+          <path d="M288,388 C294,398 306,398 312,388" fill="none" stroke="#260E05" stroke-width="3.2" stroke-linecap="round"/>
+          <!-- Sweet corner crease dimples -->
+          <circle cx="286" cy="387" r="1.5" fill="#E26A74"/>
+          <circle cx="314" cy="387" r="1.5" fill="#E26A74"/>
+          <!-- Rosy Lower Lip Pillowy Highlight -->
+          <ellipse cx="300" cy="396" rx="6.5" ry="3" fill="#FF8D96" opacity="0.75"/>
+          <ellipse cx="300" cy="397" rx="3.5" ry="1.2" fill="#FFFFFF" opacity="0.6"/>
+        </g>
+      </g>
+
+      <!-- 6. VOLUMINOUS FRONT CURLS, SOFT BANGS & CARAMEL HIGHLIGHTS -->
+      <g id="front-curls-and-bangs">
+        <!-- Main Voluminous Bangs Arch -->
+        <path d="M185,300 
+                 C175,200 220,150 300,145 
+                 C380,150 425,200 415,300 
+                 C398,285 375,270 345,280 
+                 C325,286 312,298 300,300 
+                 C288,298 275,286 255,280 
+                 C225,270 202,285 185,300 Z"
+              fill="url(#hairBaseGrad)" stroke="#220D04" stroke-width="3.5" stroke-linejoin="round"/>
+
+        <!-- Wispy Layered Bang Locks with Caramel Highlights -->
+        <path d="M230,220 C242,270 260,285 264,290 C265,280 270,272 280,282 C290,292 298,294 304,286 C308,294 322,290 328,280 C338,286 350,280 360,270"
+              fill="url(#curlHighlightGrad)" stroke="#220D04" stroke-width="2.5"/>
+
+        <!-- Bouncy Side Ringlet Tendrils framing chubby cheeks -->
+        <path d="M180,310 C160,350 165,410 195,435 C202,420 195,370 202,335"
+              fill="url(#curlHighlightGrad)" stroke="#220D04" stroke-width="3"/>
+        <path d="M420,310 C440,350 435,410 405,435 C398,420 405,370 398,335"
+              fill="url(#curlHighlightGrad)" stroke="#220D04" stroke-width="3"/>
+
+        <!-- Flyaway delicate strands on crown -->
+        <path d="M285,130 Q295,105 310,115" fill="none" stroke="#703B20" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M300,125 Q312,100 326,110" fill="none" stroke="#703B20" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+
+      <!-- 7. DELICATE SEASHELL HAIR ACCESSORIES (Woven into curls - NO FLOWERS) -->
+      <g id="hair-seashell-accessories">
+        <!-- Left Side Hair Shell Clip -->
+        <g id="left-hair-shell" transform="translate(185, 275) rotate(-18)">
+          <path d="M-10,3 C-14,-6 0,-12 10,-6 C14,3 5,6 -10,3 Z" fill="url(#ivoryShell)" stroke="#260E05" stroke-width="1.5"/>
+          <circle cx="0" cy="4" r="2.8" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="0.8"/>
+          <circle cx="-9" cy="5" r="2" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="0.8"/>
+        </g>
+        <!-- Right Side Hair Shell Clip -->
+        <g id="right-hair-shell" transform="translate(415, 275) rotate(18)">
+          <path d="M-10,3 C-14,-6 0,-12 10,-6 C14,3 5,6 -10,3 Z" fill="url(#ivoryShell)" stroke="#260E05" stroke-width="1.5"/>
+          <circle cx="0" cy="4" r="2.8" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="0.8"/>
+          <circle cx="9" cy="5" r="2" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="0.8"/>
+        </g>
+      </g>
+
+      <!-- 8. THE UNIQUE SEASHELL CROWN (Sculpted shells & pearls nestled in curls) -->
+      <g id="unique-seashell-crown">
+        <!-- Pearl Bead Headband Arch -->
+        <path d="M210,185 Q300,140 390,185" fill="none" stroke="#D3C1A5" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- Alternating String of Luminous Pearl Beads -->
+        <g id="crown-pearl-string">
+          <circle cx="218" cy="180" r="3.5" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="1"/>
+          <circle cx="234" cy="170" r="4" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="1"/>
+          <circle cx="252" cy="162" r="4.5" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="1"/>
+          <circle cx="272" cy="155" r="5" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="1"/>
+          <circle cx="328" cy="155" r="5" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="1"/>
+          <circle cx="348" cy="162" r="4.5" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="1"/>
+          <circle cx="366" cy="170" r="4" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="1"/>
+          <circle cx="382" cy="180" r="3.5" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="1"/>
+        </g>
+
+        <!-- Center Majestic Ivory Scallop Shell -->
+        <g id="crown-center-scallop" transform="translate(300, 142)">
+          <path d="M-22,12 C-32,-16 0,-32 22,-16 C32,12 12,18 -22,12 Z"
+                fill="url(#ivoryShell)" stroke="#260E05" stroke-width="2.5" stroke-linejoin="round"/>
+          <!-- Shell Fluting Ridges -->
+          <path d="M0,-28 L0,12 M-11,-22 L-6,12 M11,-22 L6,12 M-18,-12 L-12,10 M18,-12 L12,10"
+                stroke="#B8A484" stroke-width="1.8" stroke-linecap="round"/>
+          <!-- Crown Finial Giant Pearl -->
+          <circle cx="0" cy="-28" r="5.5" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="1.5"/>
+          <!-- Base Pearl Cluster -->
+          <circle cx="0" cy="14" r="5" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="1.2"/>
+        </g>
+
+        <!-- Flanking Left Spiral & Scallop Shells -->
+        <g id="crown-left-scallop" transform="translate(262, 150) rotate(-18)">
+          <path d="M-15,8 C-22,-10 0,-20 15,-10 C22,8 8,12 -15,8 Z"
+                fill="url(#ivoryShell)" stroke="#260E05" stroke-width="2"/>
+          <path d="M0,-17 L0,9 M-7,-13 L-4,9 M7,-13 L4,9" stroke="#B8A484" stroke-width="1.5"/>
+          <circle cx="0" cy="9" r="4" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="1"/>
+        </g>
+        <g id="crown-left-cowrie" transform="translate(232, 165) rotate(-32)">
+          <ellipse cx="0" cy="0" rx="9" ry="14" fill="url(#ivoryShell)" stroke="#260E05" stroke-width="1.8"/>
+          <path d="M-2,-10 C4,-5 4,5 -2,10" fill="none" stroke="#9C8666" stroke-width="1.5"/>
+          <circle cx="0" cy="12" r="3" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="0.8"/>
+        </g>
+        <g id="crown-left-conch" transform="translate(208, 182) rotate(-45)">
+          <path d="M-6,8 L6,-12 L12,2 Z" fill="url(#ivoryShell)" stroke="#260E05" stroke-width="1.8"/>
+          <circle cx="0" cy="8" r="2.8" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="0.8"/>
+        </g>
+
+        <!-- Flanking Right Spiral & Scallop Shells -->
+        <g id="crown-right-scallop" transform="translate(338, 150) rotate(18)">
+          <path d="M-15,8 C-22,-10 0,-20 15,-10 C22,8 8,12 -15,8 Z"
+                fill="url(#ivoryShell)" stroke="#260E05" stroke-width="2"/>
+          <path d="M0,-17 L0,9 M-7,-13 L-4,9 M7,-13 L4,9" stroke="#B8A484" stroke-width="1.5"/>
+          <circle cx="0" cy="9" r="4" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="1"/>
+        </g>
+        <g id="crown-right-cowrie" transform="translate(368, 165) rotate(32)">
+          <ellipse cx="0" cy="0" rx="9" ry="14" fill="url(#ivoryShell)" stroke="#260E05" stroke-width="1.8"/>
+          <path d="M2,-10 C-4,-5 -4,5 2,10" fill="none" stroke="#9C8666" stroke-width="1.5"/>
+          <circle cx="0" cy="12" r="3" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="0.8"/>
+        </g>
+        <g id="crown-right-conch" transform="translate(392, 182) rotate(45)">
+          <path d="M6,8 L-6,-12 L-12,2 Z" fill="url(#ivoryShell)" stroke="#260E05" stroke-width="1.8"/>
+          <circle cx="0" cy="8" r="2.8" fill="url(#pearlShimmer)" stroke="#260E05" stroke-width="0.8"/>
+        </g>
+      </g>
+    </g>
+
+  </g>
+</svg>

@@ -26,7 +26,7 @@ export const SoundToggle: React.FC<SoundToggleProps> = ({ className = '', compac
           : 'Sound is muted. Press to enable gentle seashell chimes'
       }
       onClick={toggleSound}
-      className={`group relative inline-flex items-center gap-1.5 p-1.5 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 focus-visible:ring-offset-2 ${
+      className={`group relative inline-flex items-center justify-center gap-1.5 p-1.5 min-w-[40px] min-h-[40px] rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 focus-visible:ring-offset-2 ${
         soundEnabled
           ? isMoonlight
             ? 'bg-midnight-900 border border-seaglass-400/50 shadow-[0_0_12px_rgba(91,181,162,0.35)] ring-1 ring-seaglass-400/40 text-seaglass-200'

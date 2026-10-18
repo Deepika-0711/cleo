@@ -143,7 +143,7 @@ export const CleoNoticesYou: React.FC<CleoNoticesYouProps> = ({ isMoonlight }) =
         <div
           role="status"
           aria-live="polite"
-          className={`absolute -top-28 sm:-top-32 right-0 sm:-right-4 w-52 sm:w-64 p-3 rounded-2xl shadow-storybook border text-left z-30 animate-float-gentle transition-colors duration-300 ${
+          className={`absolute bottom-[calc(100%+8px)] sm:bottom-[calc(100%+14px)] right-0 sm:-right-4 w-48 sm:w-64 max-w-[calc(100vw-3rem)] p-2.5 sm:p-3 rounded-2xl shadow-storybook border text-left z-30 animate-float-gentle transition-colors duration-300 ${
             isMoonlight
               ? 'bg-midnight-950/95 border-midnight-700 text-ivory-100 shadow-night'
               : 'bg-white/95 border-sand-300 text-teal-900 shadow-storybook-hover'
@@ -160,18 +160,22 @@ export const CleoNoticesYou: React.FC<CleoNoticesYouProps> = ({ isMoonlight }) =
                 e.stopPropagation();
                 setSpeechBubbleOpen(false);
               }}
-              className="text-xs opacity-50 hover:opacity-100 px-1 py-0.5 rounded transition-opacity focus:outline-none focus-visible:ring-1 focus-visible:ring-coral-400"
+              className="w-6 h-6 flex items-center justify-center text-sm opacity-60 hover:opacity-100 rounded transition-opacity focus:outline-none focus-visible:ring-1 focus-visible:ring-coral-400"
               aria-label="Close Cleo's message"
             >
               &times;
             </button>
           </div>
-          <p className="font-hand text-xs sm:text-sm text-teal-800 leading-snug">
+          <p
+            className={`font-hand text-xs sm:text-sm leading-snug ${
+              isMoonlight ? 'text-ivory-100' : 'text-teal-900'
+            }`}
+          >
             &ldquo;{speechText}&rdquo;
           </p>
           {/* Speech bubble tail pointer */}
           <div
-            className={`absolute -bottom-2 right-12 w-3 h-3 rotate-45 border-r border-b ${
+            className={`absolute -bottom-2 right-10 sm:right-12 w-3 h-3 rotate-45 border-r border-b ${
               isMoonlight
                 ? 'bg-midnight-950 border-midnight-700'
                 : 'bg-white border-sand-300'

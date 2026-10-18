@@ -166,7 +166,7 @@ export const ShellCollectionSection: React.FC = () => {
             return (
               <div
                 key={world.id}
-                className={`group relative flex flex-col justify-between p-6 sm:p-8 rounded-[32px] sm:rounded-[38px] transition-all duration-500 border cursor-pointer focus-within:ring-2 focus-within:ring-coral-400 focus-within:ring-offset-2 ${
+                className={`group relative flex flex-col justify-between p-5 sm:p-8 rounded-[28px] sm:rounded-[38px] transition-all duration-500 border cursor-pointer focus-within:ring-2 focus-within:ring-coral-400 focus-within:ring-offset-2 ${
                   isMoonlight
                     ? 'bg-midnight-900/90 border-midnight-700/80 hover:border-seaglass-400 shadow-night hover:shadow-[0_12px_28px_rgba(0,0,0,0.5)]'
                     : 'bg-[#FDFAF5] border-sand-300 hover:border-teal-600/40 shadow-storybook hover:shadow-storybook-hover'

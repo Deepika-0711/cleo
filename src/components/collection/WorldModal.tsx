@@ -83,33 +83,33 @@ export const WorldModal: React.FC<WorldModalProps> = ({ world, isOpen, onClose }
         className="relative w-full max-w-4xl bg-ivory-50 rounded-3xl sm:rounded-4xl border border-sand-300 shadow-night overflow-hidden my-auto animate-in zoom-in-95 duration-300 flex flex-col max-h-[92vh]"
       >
         {/* Modal Top Header Bar */}
-        <div className="flex items-center justify-between px-5 sm:px-8 py-4 sm:py-5 border-b border-sand-300/70 bg-sand-100/70 shrink-0">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-white border border-sand-300 shadow-sm flex items-center justify-center">
+        <div className="flex items-center justify-between px-4 sm:px-8 py-3.5 sm:py-5 border-b border-sand-300/70 bg-sand-100/70 shrink-0 gap-2">
+          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border border-sand-300 shadow-sm flex items-center justify-center shrink-0">
               <ShellIcon
                 variant={world.shellVariant}
-                size={22}
+                size={20}
                 color="#0C5A60"
                 accentColor="#F48B76"
               />
             </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-mono text-[10px] uppercase tracking-wider text-teal-600 font-semibold">
+            <div className="min-w-0">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-wider text-teal-600 font-semibold truncate">
                   Inside {world.shellType}
                 </span>
-                <DecorativeStar size={10} color="#F48B76" />
+                <DecorativeStar size={9} color="#F48B76" />
               </div>
               <h2
                 id="world-modal-title"
-                className="font-display font-bold text-xl sm:text-2xl text-teal-900 leading-tight"
+                className="font-display font-bold text-lg sm:text-2xl text-teal-900 leading-tight truncate"
               >
                 {world.name}
               </h2>
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             {/* Quick Back to Beach link for top bar */}
             <button
               type="button"
@@ -125,7 +125,7 @@ export const WorldModal: React.FC<WorldModalProps> = ({ world, isOpen, onClose }
               type="button"
               onClick={onClose}
               aria-label="Close world detail"
-              className="w-9 h-9 rounded-full bg-white border border-sand-300 text-teal-800 flex items-center justify-center text-xl font-bold hover:bg-sand-200 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border border-sand-300 text-teal-800 flex items-center justify-center text-xl font-bold hover:bg-sand-200 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400"
             >
               &times;
             </button>
@@ -212,8 +212,8 @@ export const WorldModal: React.FC<WorldModalProps> = ({ world, isOpen, onClose }
         </div>
 
         {/* Modal Bottom Footer with Primary "Back to the Beach" Button */}
-        <div className="px-5 sm:px-8 py-4 bg-sand-100/90 border-t border-sand-300/70 flex items-center justify-between shrink-0">
-          <div className="flex items-center gap-1.5 text-xs font-hand text-teal-700">
+        <div className="px-4 sm:px-8 py-3 sm:py-4 bg-sand-100/90 border-t border-sand-300/70 flex flex-col-reverse sm:flex-row items-center justify-between gap-2.5 sm:gap-4 shrink-0">
+          <div className="flex items-center gap-1.5 text-xs font-hand text-teal-700 text-center">
             <span>Carefully set the shell back upon the shore</span>
             <DecorativeStar size={10} color="#F48B76" />
           </div>
@@ -221,7 +221,7 @@ export const WorldModal: React.FC<WorldModalProps> = ({ world, isOpen, onClose }
           <button
             type="button"
             onClick={onClose}
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wider bg-teal-800 text-ivory-50 hover:bg-teal-700 active:scale-95 transition-all shadow-storybook hover:shadow-storybook-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wider bg-teal-800 text-ivory-50 hover:bg-teal-700 active:scale-95 transition-all shadow-storybook hover:shadow-storybook-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400"
           >
             <ShellIcon variant="scallop" size={16} color="#FAF7EE" accentColor="#5BB5A2" />
             <span>Back to the Beach</span>

@@ -292,7 +292,7 @@ export const StoryJourneySection: React.FC = () => {
         ------------------------------------------------------------- */}
         <div className="mb-24 sm:mb-32">
           <div
-            className="rounded-[36px] sm:rounded-[48px] p-6 sm:p-10 lg:p-14 border shadow-storybook relative overflow-hidden"
+            className="rounded-[28px] sm:rounded-[48px] p-4 sm:p-10 lg:p-14 border shadow-storybook relative overflow-hidden"
             style={{
               backgroundColor: '#FFFFFF',
               borderColor: '#8CBDB5',
@@ -308,7 +308,7 @@ export const StoryJourneySection: React.FC = () => {
               aria-hidden="true"
             />
 
-            <div className="relative z-10 max-w-4xl mx-auto text-center mb-10">
+            <div className="relative z-10 max-w-4xl mx-auto text-center mb-8 sm:mb-10">
               <Badge variant="seaglass" isCollectorStamp className="border-[#8CBDB5] mb-3">
                 Moment 03 &bull; The Three Horizons
               </Badge>
@@ -322,11 +322,11 @@ export const StoryJourneySection: React.FC = () => {
             </div>
 
             {/* Three Miniature Illustrated Windows Emerging on Arched Ribbons */}
-            <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch mb-8">
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8 items-stretch mb-8">
               {/* World Window 1: Pearl Kingdom */}
               <div
                 onClick={() => setActiveMiniWorld('pearl')}
-                className={`group relative p-5 rounded-3xl border transition-all duration-300 cursor-pointer text-left flex flex-col justify-between ${
+                className={`group relative p-4 sm:p-5 rounded-2xl sm:rounded-3xl border transition-all duration-300 cursor-pointer text-left flex flex-col justify-between ${
                   activeMiniWorld === 'pearl'
                     ? 'bg-[#EAF7F4] border-[#8CBDB5] shadow-storybook scale-[1.02]'
                     : 'bg-[#FFF9F0]/70 border-[#D9BE91]/40 hover:border-[#8CBDB5]'
@@ -360,7 +360,7 @@ export const StoryJourneySection: React.FC = () => {
               {/* World Window 2: Cloud Village */}
               <div
                 onClick={() => setActiveMiniWorld('cloud')}
-                className={`group relative p-5 rounded-3xl border transition-all duration-300 cursor-pointer text-left flex flex-col justify-between ${
+                className={`group relative p-4 sm:p-5 rounded-2xl sm:rounded-3xl border transition-all duration-300 cursor-pointer text-left flex flex-col justify-between ${
                   activeMiniWorld === 'cloud'
                     ? 'bg-[#F2EDF8] border-[#C5B4E3] shadow-storybook scale-[1.02]'
                     : 'bg-[#FFF9F0]/70 border-[#D9BE91]/40 hover:border-[#C5B4E3]'
@@ -394,7 +394,7 @@ export const StoryJourneySection: React.FC = () => {
               {/* World Window 3: Dinosaur Garden */}
               <div
                 onClick={() => setActiveMiniWorld('dino')}
-                className={`group relative p-5 rounded-3xl border transition-all duration-300 cursor-pointer text-left flex flex-col justify-between ${
+                className={`group relative p-4 sm:p-5 rounded-2xl sm:rounded-3xl border transition-all duration-300 cursor-pointer text-left flex flex-col justify-between ${
                   activeMiniWorld === 'dino'
                     ? 'bg-[#F2F8ED] border-[#7BB89A] shadow-storybook scale-[1.02]'
                     : 'bg-[#FFF9F0]/70 border-[#D9BE91]/40 hover:border-[#7BB89A]'
@@ -442,14 +442,14 @@ export const StoryJourneySection: React.FC = () => {
         ------------------------------------------------------------- */}
         <div className="relative">
           <div
-            className="rounded-[36px] sm:rounded-[48px] p-6 sm:p-10 lg:p-12 border shadow-storybook-hover overflow-hidden relative"
+            className="rounded-[28px] sm:rounded-[48px] p-4 sm:p-10 lg:p-12 border shadow-storybook-hover overflow-hidden relative"
             style={{
               backgroundColor: '#FFFFFF',
               borderColor: '#D9BE91',
             }}
           >
             {/* Wide Panoramic Sunset Artwork Frame */}
-            <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-[24px] sm:rounded-[36px] overflow-hidden bg-[#FAF7EE] mb-8">
+            <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-[20px] sm:rounded-[36px] overflow-hidden bg-[#FAF7EE] mb-6 sm:mb-8">
               <img
                 src={palaceBeachImg}
                 alt="Panoramic view of the beach at sunset with the seashell palace, tranquil turquoise water, and golden sky stretching toward the horizon"
@@ -468,18 +468,18 @@ export const StoryJourneySection: React.FC = () => {
               />
 
               {/* Cleo in the Foreground looking out toward the sea */}
-              <div className="absolute bottom-2 left-6 sm:left-14 md:left-20 z-20 flex items-end">
+              <div className="absolute bottom-2 left-4 sm:left-14 md:left-20 z-20 flex items-end">
                 <img
                   src={cleoCharacterImg}
                   alt="Cleo standing at the water's edge looking out toward the distant sea with her collecting bag"
-                  className="w-24 sm:w-36 md:w-44 h-auto object-contain filter drop-shadow(0 6px 16px rgba(37, 71, 71, 0.3))"
+                  className="w-20 sm:w-36 md:w-44 h-auto object-contain filter drop-shadow(0 6px 16px rgba(37, 71, 71, 0.3))"
                 />
               </div>
 
               {/* Panoramic Horizon Label */}
-              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 pointer-events-none">
-                <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[10px] sm:text-xs font-mono uppercase tracking-widest text-[#254747] bg-[#FFF9F0]/90 backdrop-blur-md border border-[#D9BE91] shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-[#F48B76] animate-pulse" />
+              <div className="absolute top-3 right-3 sm:top-6 sm:right-6 z-20 pointer-events-none">
+                <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full text-[9px] sm:text-xs font-mono uppercase tracking-widest text-[#254747] bg-[#FFF9F0]/90 backdrop-blur-md border border-[#D9BE91] shadow-sm">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#F48B76] animate-pulse" />
                   <span>Plate IV &bull; The Endless Horizon</span>
                 </span>
               </div>

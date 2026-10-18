@@ -18,7 +18,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ className = '', compac
         isMoonlight ? 'Moonlight' : 'Sunshine'
       } mode)`}
       onClick={toggleThemeMode}
-      className={`group relative inline-flex items-center gap-1.5 p-1 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 focus-visible:ring-offset-2 ${
+      className={`group relative inline-flex items-center justify-center gap-1.5 p-1 min-h-[40px] min-w-[56px] rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 focus-visible:ring-offset-2 ${
         isMoonlight
           ? 'bg-midnight-900 border border-midnight-700 shadow-[inset_0_2px_4px_rgba(0,0,0,0.4)] ring-1 ring-seaglass-400/30'
           : 'bg-sand-200/80 border border-sand-300 shadow-[inset_0_2px_4px_rgba(12,90,96,0.08)] ring-1 ring-coral-300/40'

@@ -150,7 +150,7 @@ export const StorybookFooter: React.FC = () => {
           }`}
         >
           <p>&copy; {CURRENT_YEAR} Cleo &mdash; The Girl Who Collects Worlds. All storybook rights reserved.</p>
-          <p className="text-[11px] opacity-80 text-center sm:text-right">
+          <p className="text-[10px] sm:text-[11px] opacity-80 text-center sm:text-right">
             Typefaces: Fraunces, Plus Jakarta Sans, &amp; Caveat (SIL OFL) &bull; React &amp; Vite (MIT) &bull; Custom vector SVG art &amp; procedural Web Audio
           </p>
         </div>

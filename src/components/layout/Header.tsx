@@ -3,6 +3,7 @@ import { DecorativeStar } from '../../design-system/DecorativeStars';
 import { ShellIcon } from '../../design-system/ShellIcon';
 import { useTheme } from '../../design-system/useTheme';
 import { PLANNED_SECTIONS } from '../../design-system/tokens';
+import { MusicToggle } from './MusicToggle';
 import { SoundToggle } from './SoundToggle';
 import { ThemeToggle } from './ThemeToggle';
 
@@ -31,10 +32,10 @@ export const Header: React.FC = () => {
           {/* Brand & Storybook Title */}
           <a
             href="#hero"
-            className="group flex items-center gap-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 rounded-lg p-1"
+            className="group flex items-center gap-2 sm:gap-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 rounded-lg p-1 min-w-0"
           >
             <div
-              className={`w-10 h-10 rounded-full border flex items-center justify-center transition-transform group-hover:scale-105 ${
+              className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full border flex items-center justify-center shrink-0 transition-transform group-hover:scale-105 ${
                 isMoonlight
                   ? 'bg-midnight-900 border-midnight-700 shadow-sm'
                   : 'bg-sand-200/70 border-sand-400/40'
@@ -42,12 +43,12 @@ export const Header: React.FC = () => {
             >
               <ShellIcon
                 variant="scallop"
-                size={22}
+                size={20}
                 color={isMoonlight ? '#5BB5A2' : '#0C5A60'}
                 accentColor="#F48B76"
               />
             </div>
-            <div>
+            <div className="min-w-0">
               <div className="flex items-center gap-1.5">
                 <span
                   className={`font-display font-bold text-xl sm:text-2xl tracking-tight transition-colors ${
@@ -63,7 +64,7 @@ export const Header: React.FC = () => {
                 />
               </div>
               <p
-                className={`font-hand text-sm sm:text-base leading-none transition-colors ${
+                className={`font-hand text-xs sm:text-sm lg:text-base leading-none transition-colors truncate max-w-[125px] min-[390px]:max-w-none hidden min-[370px]:block ${
                   isMoonlight ? 'text-seaglass-300' : 'text-teal-600'
                 }`}
               >
@@ -92,6 +93,9 @@ export const Header: React.FC = () => {
 
             <div className="h-5 w-[1px] bg-sand-400/40 mx-1" aria-hidden="true" />
 
+            {/* Soft Dreamy Background Music Toggle */}
+            <MusicToggle />
+
             {/* Subtle Magical Sound Chime Charm Toggle */}
             <SoundToggle />
 
@@ -99,14 +103,15 @@ export const Header: React.FC = () => {
             <ThemeToggle />
           </div>
 
-          {/* Mobile Right Controls: Sound Toggle + Theme Toggle + Mobile Hamburger */}
-          <div className="flex md:hidden items-center gap-1.5">
+          {/* Mobile Right Controls: Music Toggle + Sound Toggle + Theme Toggle + Mobile Hamburger */}
+          <div className="flex md:hidden items-center gap-1 sm:gap-1.5 shrink-0">
+            <MusicToggle compact />
             <SoundToggle compact />
             <ThemeToggle compact />
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`p-2 rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 ${
+              className={`p-2 rounded-lg transition-colors min-w-[40px] min-h-[40px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 ${
                 isMoonlight
                   ? 'text-seaglass-200 hover:bg-midnight-800'
                   : 'text-teal-800 hover:bg-sand-200/60'
@@ -134,17 +139,27 @@ export const Header: React.FC = () => {
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
           <div
-            className={`md:hidden border-t px-4 pt-3 pb-5 space-y-2 transition-colors ${
+            className={`md:hidden border-t px-4 pt-3 pb-5 space-y-2.5 transition-colors ${
               isMoonlight
                 ? 'bg-midnight-950 border-midnight-800 text-ivory-50'
                 : 'bg-ivory-100 border-teal-800/10 text-teal-800'
             }`}
           >
-            <div className="flex items-center justify-between pb-2 border-b border-sand-300/40">
-              <span className="text-xs font-hand text-coral-600 font-semibold">Sound & Light Controls</span>
-              <div className="flex items-center gap-2">
-                <SoundToggle />
+            <div className="pb-3 border-b border-sand-300/40 space-y-2">
+              <span className="text-xs font-hand text-coral-600 font-semibold block">
+                Atmosphere &amp; Soundscape Controls
+              </span>
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-body opacity-90">Day &amp; Night Light</span>
                 <ThemeToggle />
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-body opacity-90">Dreamy Background Music</span>
+                <MusicToggle />
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-body opacity-90">Interactive Shell Chimes</span>
+                <SoundToggle />
               </div>
             </div>
             {PLANNED_SECTIONS.map((sec) => (
@@ -167,3 +182,4 @@ export const Header: React.FC = () => {
     </>
   );
 };
+

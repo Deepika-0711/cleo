@@ -395,7 +395,7 @@ export const LivingShellDiarySection: React.FC = () => {
           <div className="lg:col-span-7 space-y-6 text-left">
             {/* Shell Selector Chamber with Central Glowing Pearl */}
             <div
-              className={`p-6 sm:p-8 rounded-[32px] sm:rounded-[40px] border shadow-storybook relative overflow-hidden transition-colors ${
+              className={`p-4 sm:p-8 rounded-[28px] sm:rounded-[40px] border shadow-storybook relative overflow-hidden transition-colors ${
                 isMoonlight
                   ? 'bg-midnight-950/90 border-[#2A4365] text-ivory-100 shadow-night'
                   : 'bg-[#FFFFFF] border-[#D9BE91] text-teal-900'
@@ -439,7 +439,7 @@ export const LivingShellDiarySection: React.FC = () => {
                       aria-controls={`diary-page-${shell.id}`}
                       type="button"
                       onClick={() => handleSelectShell(shell.id)}
-                      className={`group relative flex flex-col items-center justify-between p-3.5 rounded-2xl sm:rounded-3xl border transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 cursor-pointer ${
+                      className={`group relative flex flex-col items-center justify-between p-2.5 sm:p-3.5 rounded-2xl sm:rounded-3xl border transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 cursor-pointer ${
                         isSelected
                           ? isMoonlight
                             ? 'bg-[#142642] border-[#5BB5A2] shadow-lg scale-105 ring-2 ring-[#5BB5A2]/30'
@@ -761,14 +761,14 @@ export const LivingShellDiarySection: React.FC = () => {
                     </button>
 
                     {/* Five Memory Shell Jump Beads */}
-                    <div className="flex items-center gap-1.5">
+                    <div className="flex items-center gap-1 sm:gap-1.5 flex-wrap justify-center">
                       {FIVE_SHELL_MEMORIES.map((m, idx) => (
                         <button
                           key={m.id}
                           type="button"
                           onClick={() => handleSelectShell(m.id)}
                           aria-label={`Jump to page ${idx + 1}: ${m.fieldLabel}`}
-                          className={`h-7 px-2.5 rounded-full text-[10px] font-mono font-bold flex items-center justify-center transition-all ${
+                          className={`h-7 px-2 sm:px-2.5 min-w-[28px] rounded-full text-[10px] font-mono font-bold flex items-center justify-center transition-all ${
                             selectedShellId === m.id
                               ? 'bg-[#0C5A60] text-white shadow-xs scale-105 ring-2 ring-[#5BB5A2]/40'
                               : isMoonlight
@@ -776,7 +776,8 @@ export const LivingShellDiarySection: React.FC = () => {
                               : 'bg-sand-200/80 text-[#0C5A60] hover:bg-[#5BB5A2] hover:text-white'
                           }`}
                         >
-                          {m.fieldLabel}
+                          <span className="sm:hidden">{idx + 1}</span>
+                          <span className="hidden sm:inline">{m.fieldLabel}</span>
                         </button>
                       ))}
                     </div>

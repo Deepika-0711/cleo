@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import palaceImage from '../../assets/seashell-palace.jpg';
-import { Badge } from '../../design-system/Badge';
 import { BubbleCluster } from '../../design-system/DecorativeBubbles';
 import { DecorativeStar, StarCluster } from '../../design-system/DecorativeStars';
 import { StorybookFlourish } from '../../design-system/OrganicBorder';
@@ -90,24 +89,6 @@ export const HeroPalaceSection: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Narrative Header & Lead */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-          {/* Chapter / Location Stamp */}
-          <div className="inline-flex items-center gap-2 mb-4">
-            <Badge
-              variant={isMoonlight ? 'midnight' : 'coral'}
-              isCollectorStamp
-              className="shadow-sm"
-            >
-              Beach Mile 0.0 &bull; The Enchanted Shoreline
-            </Badge>
-            <span
-              className={`font-hand text-xs sm:text-sm tracking-wide ${
-                isMoonlight ? 'text-seaglass-300' : 'text-teal-700/80'
-              }`}
-            >
-              Where every shell holds a universe
-            </span>
-          </div>
-
           {/* Main Title */}
           <h1
             className={`font-display font-medium text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.12] mb-4 transition-colors ${
@@ -174,7 +155,7 @@ export const HeroPalaceSection: React.FC = () => {
             }`}
           >
             {/* Aspect-Ratio Box preserving the full palace silhouette & Cleo on all screens */}
-            <div className="relative w-full aspect-[16/11] sm:aspect-[16/9] rounded-2xl sm:rounded-3xl overflow-hidden bg-sand-200">
+            <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] min-h-[260px] sm:min-h-0 rounded-2xl sm:rounded-3xl overflow-hidden bg-sand-200">
               {/* Background Layer: Primary Palace & Beach Illustrated Scene */}
               <img
                 src={palaceImage}

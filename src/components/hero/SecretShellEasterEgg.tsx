@@ -159,7 +159,7 @@ export const SecretShellEasterEgg: React.FC<SecretShellEasterEggProps> = ({ isMo
         >
           {/* Card Container */}
           <div
-            className={`relative max-w-lg w-full rounded-3xl p-6 sm:p-8 shadow-2xl border transition-all duration-300 transform scale-100 ${
+            className={`relative max-w-lg w-full max-h-[90vh] overflow-y-auto rounded-3xl p-5 sm:p-8 shadow-2xl border transition-all duration-300 transform scale-100 ${
               isMoonlight
                 ? 'bg-midnight-950 border-midnight-700 text-ivory-50 shadow-night'
                 : 'bg-gradient-to-b from-ivory-50 to-sand-50 border-sand-300 text-teal-900 shadow-storybook-hover'
@@ -203,7 +203,7 @@ export const SecretShellEasterEgg: React.FC<SecretShellEasterEggProps> = ({ isMo
                 type="button"
                 onClick={handleClose}
                 aria-label="Close secret story note"
-                className="w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold opacity-60 hover:opacity-100 hover:bg-sand-200/60 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400"
+                className="w-9 h-9 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xl font-bold opacity-70 hover:opacity-100 hover:bg-sand-200/60 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400"
               >
                 &times;
               </button>

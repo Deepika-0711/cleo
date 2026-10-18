@@ -16,31 +16,31 @@ export const PearlKingdomScene: React.FC<{ className?: string }> = ({ className 
       >
         <defs>
           <linearGradient id="oceanLagoonBg" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#0E4856" />
-            <stop offset="40%" stop-color="#146B7C" />
-            <stop offset="75%" stop-color="#168E9B" />
-            <stop offset="100%" stop-color="#55D1C5" />
+            <stop offset="0%" stopColor="#0E4856" />
+            <stop offset="40%" stopColor="#146B7C" />
+            <stop offset="75%" stopColor="#168E9B" />
+            <stop offset="100%" stopColor="#55D1C5" />
           </linearGradient>
           <radialGradient id="sunkenLightRays" cx="50%" cy="0%" r="90%">
-            <stop offset="0%" stop-color="#E2FAF8" stop-opacity="0.45" />
-            <stop offset="60%" stop-color="#7BE2D6" stop-opacity="0.15" />
-            <stop offset="100%" stop-color="#0E4856" stop-opacity="0" />
+            <stop offset="0%" stopColor="#E2FAF8" stopOpacity="0.45" />
+            <stop offset="60%" stopColor="#7BE2D6" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#0E4856" stopOpacity="0" />
           </radialGradient>
           <linearGradient id="coralTowerGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#FF9E8A" />
-            <stop offset="50%" stop-color="#E26D5C" />
-            <stop offset="100%" stop-color="#8E2D41" />
+            <stop offset="0%" stopColor="#FF9E8A" />
+            <stop offset="50%" stopColor="#E26D5C" />
+            <stop offset="100%" stopColor="#8E2D41" />
           </linearGradient>
           <linearGradient id="coralTowerGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#FDECE8" />
-            <stop offset="60%" stop-color="#FFB3A3" />
-            <stop offset="100%" stop-color="#D45B6A" />
+            <stop offset="0%" stopColor="#FDECE8" />
+            <stop offset="60%" stopColor="#FFB3A3" />
+            <stop offset="100%" stopColor="#D45B6A" />
           </linearGradient>
           <radialGradient id="pearlGlowSphere" cx="35%" cy="30%" r="65%">
-            <stop offset="0%" stop-color="#FFFFFF" />
-            <stop offset="50%" stop-color="#E8FDFB" />
-            <stop offset="85%" stop-color="#9EE8DF" />
-            <stop offset="100%" stop-color="#4DB6AC" />
+            <stop offset="0%" stopColor="#FFFFFF" />
+            <stop offset="50%" stopColor="#E8FDFB" />
+            <stop offset="85%" stopColor="#9EE8DF" />
+            <stop offset="100%" stopColor="#4DB6AC" />
           </radialGradient>
           <filter id="pearlBiolumGlow" x="-30%" y="-30%" width="160%" height="160%">
             <feGaussianBlur stdDeviation="4" result="glow" />
@@ -163,21 +163,21 @@ export const CloudVillageScene: React.FC<{ className?: string }> = ({ className 
       >
         <defs>
           <linearGradient id="cloudSkySunset" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#8DB6E8" />
-            <stop offset="35%" stop-color="#C7B2E4" />
-            <stop offset="70%" stop-color="#F7C6B8" />
-            <stop offset="100%" stop-color="#FFEED6" />
+            <stop offset="0%" stopColor="#8DB6E8" />
+            <stop offset="35%" stopColor="#C7B2E4" />
+            <stop offset="70%" stopColor="#F7C6B8" />
+            <stop offset="100%" stopColor="#FFEED6" />
           </linearGradient>
           <radialGradient id="skySunGlow" cx="50%" cy="40%" r="55%">
-            <stop offset="0%" stop-color="#FFFDF5" />
-            <stop offset="40%" stop-color="#FFE4B5" stop-opacity="0.8" />
-            <stop offset="100%" stop-color="#F7C6B8" stop-opacity="0" />
+            <stop offset="0%" stopColor="#FFFDF5" />
+            <stop offset="40%" stopColor="#FFE4B5" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#F7C6B8" stopOpacity="0" />
           </radialGradient>
           <linearGradient id="floatingIslandGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#8ECBA5" />
-            <stop offset="25%" stop-color="#65A683" />
-            <stop offset="70%" stop-color="#7B6D8D" />
-            <stop offset="100%" stop-color="#4F4263" />
+            <stop offset="0%" stopColor="#8ECBA5" />
+            <stop offset="25%" stopColor="#65A683" />
+            <stop offset="70%" stopColor="#7B6D8D" />
+            <stop offset="100%" stopColor="#4F4263" />
           </linearGradient>
           <filter id="cloudSoftGlow" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur stdDeviation="4" result="glow" />
@@ -288,25 +288,25 @@ export const DinosaurGardenScene: React.FC<{ className?: string }> = ({ classNam
       >
         <defs>
           <linearGradient id="dinoCanopySky" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#FDF6D8" />
-            <stop offset="40%" stop-color="#E8F4D9" />
-            <stop offset="75%" stop-color="#C2E7D0" />
-            <stop offset="100%" stop-color="#84C7A4" />
+            <stop offset="0%" stopColor="#FDF6D8" />
+            <stop offset="40%" stopColor="#E8F4D9" />
+            <stop offset="75%" stopColor="#C2E7D0" />
+            <stop offset="100%" stopColor="#84C7A4" />
           </linearGradient>
           <linearGradient id="streamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#A8F0E5" />
-            <stop offset="50%" stop-color="#6ED1C6" />
-            <stop offset="100%" stop-color="#3FA69A" />
+            <stop offset="0%" stopColor="#A8F0E5" />
+            <stop offset="50%" stopColor="#6ED1C6" />
+            <stop offset="100%" stopColor="#3FA69A" />
           </linearGradient>
           <radialGradient id="babySauropodGrad" cx="45%" cy="35%" r="60%">
-            <stop offset="0%" stop-color="#A7E4C4" />
-            <stop offset="70%" stop-color="#69B98E" />
-            <stop offset="100%" stop-color="#4B906A" />
+            <stop offset="0%" stopColor="#A7E4C4" />
+            <stop offset="70%" stopColor="#69B98E" />
+            <stop offset="100%" stopColor="#4B906A" />
           </radialGradient>
           <radialGradient id="babyTriGrad" cx="45%" cy="35%" r="60%">
-            <stop offset="0%" stop-color="#FFD1B3" />
-            <stop offset="65%" stop-color="#F48B76" />
-            <stop offset="100%" stop-color="#D45D47" />
+            <stop offset="0%" stopColor="#FFD1B3" />
+            <stop offset="65%" stopColor="#F48B76" />
+            <stop offset="100%" stopColor="#D45D47" />
           </radialGradient>
           <filter id="dinoWarmSunlight" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur stdDeviation="5" result="glow" />

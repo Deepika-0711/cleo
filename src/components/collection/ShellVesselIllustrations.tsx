@@ -26,21 +26,21 @@ export const PearlKingdomShellVessel: React.FC<ShellVesselProps> = ({
       <defs>
         {/* Luminous Nautilus Chamber Gradients */}
         <radialGradient id="pearlNautilusOuter" cx="45%" cy="40%" r="55%">
-          <stop offset="0%" stop-color="#FFFFFF" />
-          <stop offset="35%" stop-color="#E0F7F6" />
-          <stop offset="70%" stop-color="#5BB5A2" />
-          <stop offset="100%" stop-color="#0C5A60" />
+          <stop offset="0%" stopColor="#FFFFFF" />
+          <stop offset="35%" stopColor="#E0F7F6" />
+          <stop offset="70%" stopColor="#5BB5A2" />
+          <stop offset="100%" stopColor="#0C5A60" />
         </radialGradient>
         <radialGradient id="pearlPortalGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
-          <stop offset="40%" stop-color="#72E0D1" stop-opacity="0.8" />
-          <stop offset="80%" stop-color="#0C5A60" stop-opacity="0.5" />
-          <stop offset="100%" stop-color="#073B3F" stop-opacity="0" />
+          <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.9" />
+          <stop offset="40%" stopColor="#72E0D1" stopOpacity="0.8" />
+          <stop offset="80%" stopColor="#0C5A60" stopOpacity="0.5" />
+          <stop offset="100%" stopColor="#073B3F" stopOpacity="0" />
         </radialGradient>
         <linearGradient id="nautilusRibs" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
-          <stop offset="50%" stop-color="#A8EAE2" stop-opacity="0.6" />
-          <stop offset="100%" stop-color="#0C5A60" stop-opacity="0.2" />
+          <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.9" />
+          <stop offset="50%" stopColor="#A8EAE2" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="#0C5A60" stopOpacity="0.2" />
         </linearGradient>
         <filter id="pearlKingdomGlow" x="-20%" y="-20%" width="140%" height="140%">
           <feGaussianBlur stdDeviation="6" result="blur" />
@@ -100,15 +100,15 @@ export const CloudVillageShellVessel: React.FC<ShellVesselProps> = ({
     >
       <defs>
         <linearGradient id="cloudConchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#FFF5EE" />
-          <stop offset="30%" stop-color="#DCECFB" />
-          <stop offset="65%" stop-color="#C5B4E3" />
-          <stop offset="100%" stop-color="#FFB3A3" />
+          <stop offset="0%" stopColor="#FFF5EE" />
+          <stop offset="30%" stopColor="#DCECFB" />
+          <stop offset="65%" stopColor="#C5B4E3" />
+          <stop offset="100%" stopColor="#FFB3A3" />
         </linearGradient>
         <radialGradient id="cloudPortalAura" cx="50%" cy="40%" r="50%">
-          <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
-          <stop offset="50%" stop-color="#E5D9F8" stop-opacity="0.6" />
-          <stop offset="100%" stop-color="#B8D5F8" stop-opacity="0" />
+          <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.9" />
+          <stop offset="50%" stopColor="#E5D9F8" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="#B8D5F8" stopOpacity="0" />
         </radialGradient>
         <filter id="cloudVillageGlow" x="-20%" y="-20%" width="140%" height="140%">
           <feGaussianBlur stdDeviation="5" result="blur" />
@@ -207,15 +207,15 @@ export const DinosaurGardenShellVessel: React.FC<ShellVesselProps> = ({
     >
       <defs>
         <radialGradient id="dinoScallopGrad" cx="50%" cy="85%" r="75%">
-          <stop offset="0%" stop-color="#FFEBB8" />
-          <stop offset="35%" stop-color="#E8F4D9" />
-          <stop offset="65%" stop-color="#7BB89A" />
-          <stop offset="100%" stop-color="#386B52" />
+          <stop offset="0%" stopColor="#FFEBB8" />
+          <stop offset="35%" stopColor="#E8F4D9" />
+          <stop offset="65%" stopColor="#7BB89A" />
+          <stop offset="100%" stopColor="#386B52" />
         </radialGradient>
         <radialGradient id="dinoGardenAura" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#FFF7D6" stop-opacity="0.9" />
-          <stop offset="50%" stop-color="#C2E7D0" stop-opacity="0.6" />
-          <stop offset="100%" stop-color="#F4A261" stop-opacity="0" />
+          <stop offset="0%" stopColor="#FFF7D6" stopOpacity="0.9" />
+          <stop offset="50%" stopColor="#C2E7D0" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="#F4A261" stopOpacity="0" />
         </radialGradient>
         <filter id="dinoGardenGlow" x="-20%" y="-20%" width="140%" height="140%">
           <feGaussianBlur stdDeviation="5" result="blur" />

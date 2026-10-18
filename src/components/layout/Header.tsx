@@ -25,47 +25,47 @@ export const Header: React.FC = () => {
         className={`sticky top-0 z-40 backdrop-blur-md transition-colors duration-500 border-b ${
           isMoonlight
             ? 'bg-midnight-950/90 border-midnight-800 text-ivory-50 shadow-night'
-            : 'bg-ivory-100/90 border-teal-800/10 text-teal-800'
+            : 'bg-[#FAF7EE]/90 border-[#D4BA88]/30 text-teal-950'
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between">
           {/* Brand & Storybook Title */}
           <a
             href="#hero"
-            className="group flex items-center gap-2 sm:gap-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 rounded-lg p-1 min-w-0"
+            className="group flex items-center gap-2.5 sm:gap-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 rounded-lg p-1 min-w-0"
           >
             <div
               className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full border flex items-center justify-center shrink-0 transition-transform group-hover:scale-105 ${
                 isMoonlight
                   ? 'bg-midnight-900 border-midnight-700 shadow-sm'
-                  : 'bg-sand-200/70 border-sand-400/40'
+                  : 'bg-white border-[#D4BA88]/60 shadow-xs'
               }`}
             >
               <ShellIcon
                 variant="scallop"
                 size={20}
                 color={isMoonlight ? '#5BB5A2' : '#0C5A60'}
-                accentColor="#F48B76"
+                accentColor="#D4BA88"
               />
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-1.5">
                 <span
-                  className={`font-display font-bold text-xl sm:text-2xl tracking-tight transition-colors ${
-                    isMoonlight ? 'text-ivory-50' : 'text-teal-800'
+                  className={`font-display italic font-normal text-xl sm:text-2xl tracking-tight transition-colors ${
+                    isMoonlight ? 'text-ivory-50' : 'text-teal-950'
                   }`}
                 >
                   Cleo
                 </span>
                 <DecorativeStar
                   size={11}
-                  color={isMoonlight ? '#FFF275' : '#F48B76'}
+                  color={isMoonlight ? '#FFF275' : '#D4BA88'}
                   className="animate-star-shimmer"
                 />
               </div>
               <p
                 className={`font-hand text-xs sm:text-sm lg:text-base leading-none transition-colors truncate max-w-[125px] min-[390px]:max-w-none hidden min-[370px]:block ${
-                  isMoonlight ? 'text-seaglass-300' : 'text-teal-600'
+                  isMoonlight ? 'text-seaglass-300' : 'text-teal-700/80'
                 }`}
               >
                 The Girl Who Collects Worlds

@@ -1,13 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import { Badge } from '../../design-system/Badge';
 import { DecorativeStar } from '../../design-system/DecorativeStars';
 import { StorybookFlourish } from '../../design-system/OrganicBorder';
 import { ShellIcon } from '../../design-system/ShellIcon';
-import {
-  CloudVillageScene,
-  DinosaurGardenScene,
-  PearlKingdomScene,
-} from './WorldSceneryIllustrations';
+
 
 export type WorldId = 'pearl-kingdom' | 'cloud-village' | 'dinosaur-garden';
 
@@ -17,6 +12,9 @@ export interface WorldDetailData {
   tagline: string;
   shellType: string;
   shellVariant: 'nautilus' | 'conch' | 'scallop';
+  image: string;
+  imageAlt: string;
+  objectPosition?: string;
   paletteColors: string[];
   atmosphericDescription: string;
   playfulDetail: {
@@ -80,29 +78,29 @@ export const WorldModal: React.FC<WorldModalProps> = ({ world, isOpen, onClose }
       {/* Modal Dialog Card */}
       <div
         ref={modalRef}
-        className="relative w-full max-w-4xl bg-ivory-50 rounded-3xl sm:rounded-4xl border border-sand-300 shadow-night overflow-hidden my-auto animate-in zoom-in-95 duration-300 flex flex-col max-h-[92vh]"
+        className="relative w-full max-w-4xl bg-[#FFFDF9] rounded-3xl sm:rounded-4xl border border-[#D4BA88]/70 shadow-night overflow-hidden my-auto animate-in zoom-in-95 duration-300 flex flex-col max-h-[92vh]"
       >
         {/* Modal Top Header Bar */}
-        <div className="flex items-center justify-between px-4 sm:px-8 py-3.5 sm:py-5 border-b border-sand-300/70 bg-sand-100/70 shrink-0 gap-2">
-          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border border-sand-300 shadow-sm flex items-center justify-center shrink-0">
+        <div className="flex items-center justify-between px-5 sm:px-8 py-4 sm:py-5 border-b border-[#D4BA88]/40 bg-[#FAF7EE] shrink-0 gap-2">
+          <div className="flex items-center gap-3 sm:gap-4 min-w-0">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white border border-[#D4BA88]/60 shadow-xs flex items-center justify-center shrink-0">
               <ShellIcon
                 variant={world.shellVariant}
-                size={20}
+                size={22}
                 color="#0C5A60"
-                accentColor="#F48B76"
+                accentColor="#D4BA88"
               />
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-1.5 sm:gap-2">
-                <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-wider text-teal-600 font-semibold truncate">
-                  Inside {world.shellType}
+                <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-[#D4BA88] font-semibold truncate">
+                  Inside the {world.shellType}
                 </span>
-                <DecorativeStar size={9} color="#F48B76" />
+                <DecorativeStar size={9} color="#D4BA88" />
               </div>
               <h2
                 id="world-modal-title"
-                className="font-display font-bold text-lg sm:text-2xl text-teal-900 leading-tight truncate"
+                className="font-display italic font-normal text-xl sm:text-2xl text-teal-950 leading-tight truncate"
               >
                 {world.name}
               </h2>
@@ -114,7 +112,7 @@ export const WorldModal: React.FC<WorldModalProps> = ({ world, isOpen, onClose }
             <button
               type="button"
               onClick={onClose}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-teal-800 bg-white border border-sand-300 hover:bg-sand-50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-600"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold text-teal-900 bg-white border border-[#D4BA88]/60 hover:bg-[#FAF7EE] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 cursor-pointer"
             >
               <span>&larr; Back to the Beach</span>
             </button>
@@ -125,7 +123,7 @@ export const WorldModal: React.FC<WorldModalProps> = ({ world, isOpen, onClose }
               type="button"
               onClick={onClose}
               aria-label="Close world detail"
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border border-sand-300 text-teal-800 flex items-center justify-center text-xl font-bold hover:bg-sand-200 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border border-[#D4BA88]/60 text-teal-900 flex items-center justify-center text-lg font-bold hover:bg-[#FAF7EE] transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400"
             >
               &times;
             </button>
@@ -134,59 +132,77 @@ export const WorldModal: React.FC<WorldModalProps> = ({ world, isOpen, onClose }
 
         {/* Scrollable Modal Body */}
         <div className="overflow-y-auto px-5 sm:px-8 py-6 space-y-6 flex-1">
-          {/* World Scenery Visual Canvas */}
-          <div className="relative rounded-2xl overflow-hidden border border-sand-300 shadow-storybook">
-            {world.id === 'pearl-kingdom' && <PearlKingdomScene />}
-            {world.id === 'cloud-village' && <CloudVillageScene />}
-            {world.id === 'dinosaur-garden' && <DinosaurGardenScene />}
+          {/* World Fairytale Scenery Illustration */}
+          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#D4BA88]/60 shadow-storybook bg-[#FAF7EE] group/scenery">
+            <div className="relative w-full aspect-[16/9] sm:aspect-[2/1] max-h-[380px] overflow-hidden">
+              <img
+                src={world.image}
+                alt={world.imageAlt}
+                className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover/scenery:scale-103"
+                style={{ objectPosition: world.objectPosition || 'center' }}
+                loading="eager"
+                decoding="async"
+              />
 
-            {/* Atmosphere Palette Tag floating on scene */}
-            <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 p-1.5 bg-black/40 backdrop-blur-md rounded-full border border-white/30 text-white text-[11px] font-medium font-body px-3">
-              <span className="w-2 h-2 rounded-full bg-coral-400 animate-ping" />
-              <span>{world.tagline}</span>
+              {/* Storybook edge vignette & atmospheric depth */}
+              <div
+                className="absolute inset-0 pointer-events-none bg-gradient-to-t from-teal-950/45 via-transparent to-black/20"
+                aria-hidden="true"
+              />
+
+              {/* Atmosphere Palette Tag floating on scene */}
+              <div className="absolute top-3 left-3 z-10 flex items-center gap-2 py-1 px-3 bg-black/50 backdrop-blur-md rounded-full border border-white/30 text-white text-[11px] font-medium font-body shadow-xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D4BA88]" />
+                <span>{world.tagline}</span>
+              </div>
+
+              {/* Shell Variant pill floating on scene top right */}
+              <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5 py-1 px-3 bg-white/85 backdrop-blur-md rounded-full border border-[#D4BA88]/60 text-teal-950 text-[11px] font-hand font-semibold shadow-xs">
+                <span>{world.shellType}</span>
+              </div>
             </div>
           </div>
 
           {/* Narrative Atmospheric Description */}
-          <div className="p-5 sm:p-6 rounded-2xl bg-white/90 border border-sand-300 text-left">
-            <span className="text-xs font-mono uppercase tracking-widest text-teal-600 font-semibold block mb-2">
-              Atmospheric Overview
+          <div className="p-5 sm:p-6 rounded-2xl bg-white border border-[#D4BA88]/40 text-left shadow-xs">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-[#D4BA88] font-semibold block mb-2">
+              Atmospheric Chronicle
             </span>
-            <p className="font-body text-sm sm:text-base text-teal-900/90 leading-relaxed">
+            <p className="font-body text-sm sm:text-base text-teal-950/90 leading-relaxed">
               {world.atmosphericDescription}
             </p>
           </div>
 
           {/* The Playful Detail Card */}
-          <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-sand-100/90 to-ivory-100 border border-sand-300 text-left shadow-sm">
-            <div className="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-sand-300/60">
+          <div className="p-5 sm:p-6 rounded-2xl bg-[#FAF7EE] border border-[#D4BA88]/50 text-left shadow-xs">
+            <div className="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-[#D4BA88]/30">
               <div className="flex items-center gap-2">
-                <Badge variant="coral" isCollectorStamp>
-                  {world.playfulDetail.badge}
-                </Badge>
-                <h4 className="font-display font-bold text-base sm:text-lg text-teal-900">
+                <span className="font-mono text-[10px] uppercase tracking-wider text-[#DE6B54] font-semibold">
+                  &bull; {world.playfulDetail.badge}
+                </span>
+                <h4 className="font-display font-medium text-base sm:text-lg text-teal-950">
                   {world.playfulDetail.title}
                 </h4>
               </div>
-              <DecorativeStar size={14} color="#5BB5A2" />
+              <DecorativeStar size={13} color="#D4BA88" />
             </div>
-            <p className="font-body text-xs sm:text-sm text-teal-800/85 leading-relaxed">
+            <p className="font-body text-xs sm:text-sm text-teal-900/85 leading-relaxed">
               {world.playfulDetail.content}
             </p>
           </div>
 
           {/* Miniature Environment Highlights */}
           <div className="space-y-3 text-left">
-            <span className="text-xs font-mono uppercase tracking-widest text-teal-600 font-semibold block">
-              Curiosities Found in this Shell
+            <span className="text-[10px] font-mono uppercase tracking-widest text-[#D4BA88] font-semibold block">
+              Curiosities Preserved in this Shell
             </span>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               {world.miniatureHighlights.map((highlight, idx) => (
                 <div
                   key={idx}
-                  className="p-3 rounded-xl bg-white/80 border border-sand-300/80 flex items-center gap-2.5 text-xs font-body text-teal-900 font-medium"
+                  className="p-3 rounded-xl bg-white border border-[#D4BA88]/35 flex items-center gap-2.5 text-xs font-body text-teal-950 font-medium"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-seaglass-500 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#5BB5A2] shrink-0" />
                   <span>{highlight}</span>
                 </div>
               ))}
@@ -194,8 +210,8 @@ export const WorldModal: React.FC<WorldModalProps> = ({ world, isOpen, onClose }
           </div>
 
           {/* Palette Swatches */}
-          <div className="flex items-center gap-3 pt-2 text-xs font-body text-teal-800/70">
-            <span className="font-semibold text-teal-900">Atmospheric Palette:</span>
+          <div className="flex items-center gap-3 pt-2 text-xs font-body text-teal-800/80">
+            <span className="font-medium text-teal-950">Atmospheric Pigments:</span>
             <div className="flex items-center gap-2">
               {world.paletteColors.map((color, i) => (
                 <span
@@ -212,19 +228,20 @@ export const WorldModal: React.FC<WorldModalProps> = ({ world, isOpen, onClose }
         </div>
 
         {/* Modal Bottom Footer with Primary "Back to the Beach" Button */}
-        <div className="px-4 sm:px-8 py-3 sm:py-4 bg-sand-100/90 border-t border-sand-300/70 flex flex-col-reverse sm:flex-row items-center justify-between gap-2.5 sm:gap-4 shrink-0">
-          <div className="flex items-center gap-1.5 text-xs font-hand text-teal-700 text-center">
+        <div className="px-5 sm:px-8 py-3.5 sm:py-4 bg-[#FAF7EE] border-t border-[#D4BA88]/40 flex flex-col-reverse sm:flex-row items-center justify-between gap-3 sm:gap-4 shrink-0">
+          <div className="flex items-center gap-1.5 text-xs font-hand text-teal-800/80 text-center">
             <span>Carefully set the shell back upon the shore</span>
-            <DecorativeStar size={10} color="#F48B76" />
+            <DecorativeStar size={10} color="#D4BA88" />
           </div>
 
           <button
             type="button"
             onClick={onClose}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wider bg-teal-800 text-ivory-50 hover:bg-teal-700 active:scale-95 transition-all shadow-storybook hover:shadow-storybook-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-teal-850 text-ivory-50 hover:bg-teal-700 active:scale-95 transition-all shadow-storybook hover:shadow-storybook-hover border border-[#D4BA88]/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 cursor-pointer"
+            style={{ backgroundColor: '#0C5A60' }}
           >
-            <ShellIcon variant="scallop" size={16} color="#FAF7EE" accentColor="#5BB5A2" />
-            <span>Back to the Beach</span>
+            <ShellIcon variant="scallop" size={15} color="#FAF7EE" accentColor="#D4BA88" />
+            <span>Return to the Shore</span>
           </button>
         </div>
       </div>

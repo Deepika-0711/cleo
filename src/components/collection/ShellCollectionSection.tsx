@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
-import { Badge } from '../../design-system/Badge';
-import { BubbleCluster } from '../../design-system/DecorativeBubbles';
 import { DecorativeStar } from '../../design-system/DecorativeStars';
 import { StorybookFlourish } from '../../design-system/OrganicBorder';
 import { useSound } from '../../design-system/useSound';
 import { useTheme } from '../../design-system/useTheme';
-import {
-  CloudVillageShellVessel,
-  DinosaurGardenShellVessel,
-  PearlKingdomShellVessel,
-} from './ShellVesselIllustrations';
+import pearlKingdomImg from '../../assets/pearl-kingdom.jpg';
+import cloudVillageImg from '../../assets/cloud-village.jpg';
+import dinosaurGardenImg from '../../assets/dinosaur-garden.jpg';
 import { WorldModal } from './WorldModal';
 import type { WorldDetailData } from './WorldModal';
 
@@ -20,6 +16,10 @@ const THREE_WORLDS_DATA: WorldDetailData[] = [
     tagline: 'Sunken Coral Cathedrals & Luminescent Depths',
     shellType: 'Spiral Nautilus',
     shellVariant: 'nautilus',
+    image: pearlKingdomImg,
+    imageAlt:
+      'Luminous underwater Pearl Kingdom shell palace with iridescent spiraled towers, glowing floating pearls, vibrant coral gardens, and friendly sea creatures in turquoise water',
+    objectPosition: 'center',
     paletteColors: ['#146B7C', '#55D1C5', '#FFFFFF', '#FF9E8A'],
     atmosphericDescription:
       'Below the whispering surface lies a sunken kingdom where crystal turquoise currents weave through coral towers. Bioluminescent kelp illuminates pearlescent arches, and giant floating pearls drift like gentle lanterns through the tranquil depths.',
@@ -42,6 +42,10 @@ const THREE_WORLDS_DATA: WorldDetailData[] = [
     tagline: 'Floating Sky Islands & Pastel Windmills',
     shellType: 'Spired Whelk Conch',
     shellVariant: 'conch',
+    image: cloudVillageImg,
+    imageAlt:
+      'Dreamy Cloud Village floating sky islands with pastel cottages, fluffy pink clouds, winding wooden bridges, magical glowing lanterns, and whimsical windmills',
+    objectPosition: 'center',
     paletteColors: ['#8DB6E8', '#C7B2E4', '#FFEED6', '#F7C6B8'],
     atmosphericDescription:
       'High above the ocean winds, nestled among golden-peach sunset clouds, rests a peaceful village of floating islands. Pastel cottages with lavender chimneys are connected by arched rope bridges, while gentle breezes carry the scent of sky blossoms.',
@@ -64,6 +68,10 @@ const THREE_WORLDS_DATA: WorldDetailData[] = [
     tagline: 'Prehistoric Conservatory & Adorable Baby Giants',
     shellType: 'Fan Scallop Shell',
     shellVariant: 'scallop',
+    image: dinosaurGardenImg,
+    imageAlt:
+      'Enchanted prehistoric Dinosaur Garden conservatory with friendly baby sauropod and baby triceratops, sparkling waterfalls, crystal streams, and lush tropical flora bathed in golden sunlight',
+    objectPosition: 'center',
     paletteColors: ['#69B98E', '#FDF6D8', '#F48B76', '#DFCEB7'],
     atmosphericDescription:
       'Inside this warm fluted scallop unfolds a sun-drenched prehistoric conservatory where gentle baby dinosaurs graze among giant tropical ferns. Sparkling streams cascade over smooth river stones, and warm sunbeams filter through emerald jungle canopies.',
@@ -96,59 +104,59 @@ export const ShellCollectionSection: React.FC = () => {
     <section
       id="collection"
       aria-labelledby="collection-heading"
-      className={`relative scroll-mt-20 py-16 sm:py-24 transition-colors duration-700 overflow-hidden border-t ${
-        isMoonlight
-          ? 'bg-gradient-to-b from-[#0B1124] via-[#0E1830] to-[#0B1124] border-midnight-800 text-ivory-50'
-          : 'bg-gradient-to-b from-ivory-100 via-sand-100/60 to-ivory-100 border-sand-300/70 text-teal-900'
-      }`}
+      className="relative scroll-mt-20 py-20 sm:py-28 transition-colors duration-700 overflow-hidden"
+      style={{
+        backgroundColor: isMoonlight ? '#09111E' : '#FAF7EE',
+        color: isMoonlight ? '#FDFAF5' : '#0C5A60',
+      }}
     >
-      {/* Ambient background shoreline glow */}
+      {/* Ambient soft background shoreline glow */}
       <div
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full blur-3xl opacity-25 pointer-events-none transition-all duration-700"
+        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full blur-3xl opacity-20 pointer-events-none transition-all duration-700"
         style={{
           background: isMoonlight
-            ? 'radial-gradient(circle, rgba(91, 181, 162, 0.35) 0%, rgba(17, 26, 56, 0.6) 50%, transparent 80%)'
-            : 'radial-gradient(circle, rgba(91, 181, 162, 0.4) 0%, rgba(244, 139, 118, 0.2) 50%, transparent 80%)',
+            ? 'radial-gradient(circle, rgba(91, 181, 162, 0.3) 0%, rgba(17, 26, 56, 0.5) 60%, transparent 80%)'
+            : 'radial-gradient(circle, rgba(212, 186, 136, 0.45) 0%, rgba(244, 139, 118, 0.15) 50%, transparent 80%)',
         }}
         aria-hidden="true"
       />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Heading & Narrative Lead */}
+        {/* Section Heading & Whimsical Introduction */}
         <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-20">
           <div className="inline-flex items-center gap-2 mb-3">
-            <Badge variant={isMoonlight ? 'midnight' : 'coral'} isCollectorStamp>
-              Interactive Shell Worlds
-            </Badge>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D4BA88]" />
             <span
-              className={`font-hand text-xs sm:text-sm ${
+              className={`font-mono text-[11px] uppercase tracking-[0.24em] font-medium transition-colors ${
                 isMoonlight ? 'text-seaglass-300' : 'text-teal-700/80'
               }`}
             >
-              Hold a shell to your ear
+              Chapter I &bull; Miniature Horizons
             </span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D4BA88]" />
           </div>
 
           <h2
             id="collection-heading"
-            className={`font-display font-medium text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4 transition-colors ${
-              isMoonlight ? 'text-ivory-50' : 'text-teal-900'
+            className={`font-display italic font-normal text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4 transition-colors ${
+              isMoonlight ? 'text-ivory-50' : 'text-teal-950'
             }`}
           >
             A Little Shell, A Whole New World
           </h2>
 
           <p
-            className={`font-body text-base sm:text-lg leading-relaxed transition-colors ${
+            className={`font-body text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-3 transition-colors ${
               isMoonlight ? 'text-seaglass-100/85' : 'text-teal-800/85'
             }`}
           >
-            Cleo's collection is full of tiny places waiting to be discovered.
+            Cleo&apos;s collection is full of tiny places waiting to be discovered.
+            Hold any shell to your ear to hear the universe singing inside.
           </p>
 
           <p
-            className={`font-hand text-sm sm:text-base mt-2 max-w-lg mx-auto transition-colors ${
-              isMoonlight ? 'text-seaglass-200/80' : 'text-teal-700/75'
+            className={`font-hand text-base sm:text-lg max-w-lg mx-auto transition-colors ${
+              isMoonlight ? 'text-[#D4BA88]' : 'text-[#DE6B54]'
             }`}
           >
             &ldquo;Each shell on this beach sailed thousands of miles to bring us an entire miniature horizon.&rdquo;
@@ -160,81 +168,99 @@ export const ShellCollectionSection: React.FC = () => {
         {/* The Three Collectible Shell Treasures Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 items-stretch">
           {THREE_WORLDS_DATA.map((world, index) => {
-            const isFirst = index === 0;
-            const isSecond = index === 1;
-
             return (
               <div
                 key={world.id}
-                className={`group relative flex flex-col justify-between p-5 sm:p-8 rounded-[28px] sm:rounded-[38px] transition-all duration-500 border cursor-pointer focus-within:ring-2 focus-within:ring-coral-400 focus-within:ring-offset-2 ${
+                className={`group relative flex flex-col justify-between p-6 sm:p-8 rounded-[32px] sm:rounded-[40px] transition-all duration-500 border cursor-pointer focus-within:ring-2 focus-within:ring-coral-400 focus-within:ring-offset-2 ${
                   isMoonlight
-                    ? 'bg-midnight-900/90 border-midnight-700/80 hover:border-seaglass-400 shadow-night hover:shadow-[0_12px_28px_rgba(0,0,0,0.5)]'
-                    : 'bg-[#FDFAF5] border-sand-300 hover:border-teal-600/40 shadow-storybook hover:shadow-storybook-hover'
+                    ? 'bg-[#0E172A]/90 border-[#2A4365] hover:border-seaglass-400 shadow-night hover:shadow-[0_16px_36px_rgba(0,0,0,0.6)]'
+                    : 'bg-[#FFFFFF] border-[#D4BA88]/50 hover:border-teal-700/50 shadow-storybook hover:shadow-storybook-hover'
                 } hover:-translate-y-2`}
                 onClick={() => handleSelectWorld(world)}
               >
-                {/* Collectible Pedestal Top Header */}
+                {/* Storybook Corner Pearl Accents */}
+                <span className="absolute top-3 left-3 w-2 h-2 rounded-full bg-white border border-[#D4BA88] shadow-xs" />
+                <span className="absolute top-3 right-3 w-2 h-2 rounded-full bg-white border border-[#D4BA88] shadow-xs" />
+                <span className="absolute bottom-3 left-3 w-2 h-2 rounded-full bg-white border border-[#D4BA88] shadow-xs" />
+                <span className="absolute bottom-3 right-3 w-2 h-2 rounded-full bg-white border border-[#D4BA88] shadow-xs" />
+
+                {/* Pedestal Header */}
                 <div
                   className={`flex items-center justify-between mb-4 pb-3 border-b ${
-                    isMoonlight ? 'border-midnight-700/70' : 'border-sand-300/50'
+                    isMoonlight ? 'border-midnight-700/70' : 'border-[#D4BA88]/30'
                   }`}
                 >
                   <span
-                    className={`font-hand text-xs font-semibold tracking-wide ${
-                      isMoonlight ? 'text-seaglass-300' : 'text-teal-700'
+                    className={`font-mono text-[10px] uppercase tracking-widest font-semibold ${
+                      isMoonlight ? 'text-seaglass-300' : 'text-[#D4BA88]'
                     }`}
                   >
-                    World 0{index + 1}
+                    Curiosity 0{index + 1}
                   </span>
-                  <Badge variant={isFirst ? 'teal' : isSecond ? 'coral' : 'seaglass'}>
+                  <span
+                    className={`text-[11px] font-hand px-2.5 py-0.5 rounded-full border ${
+                      isMoonlight
+                        ? 'bg-midnight-950 text-seaglass-200 border-midnight-700'
+                        : 'bg-[#FAF7EE] text-teal-800 border-[#D4BA88]/50'
+                    }`}
+                  >
                     {world.shellType}
-                  </Badge>
+                  </span>
                 </div>
 
-                {/* Shell Illustration & Ambient Portal Aura */}
-                <div className="relative py-4 my-auto flex flex-col items-center justify-center">
-                  {/* Floating animation wrapper */}
+                {/* Miniature World Fairytale Artwork & Elegant Storybook Frame */}
+                <div className="relative py-2 my-auto flex flex-col items-center justify-center w-full">
                   <div
-                    className="relative transition-transform duration-500 group-hover:scale-110 animate-float-gentle"
-                    style={{ animationDelay: `${index * 0.8}s` }}
+                    className={`relative w-full aspect-[16/10] sm:aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden border transition-all duration-500 shadow-sm group-hover:shadow-md ${
+                      isMoonlight
+                        ? 'border-[#2A4365] group-hover:border-seaglass-400/70 bg-[#070D18]'
+                        : 'border-[#D4BA88]/50 group-hover:border-teal-700/60 bg-[#FAF7EE]'
+                    }`}
                   >
-                    {world.id === 'pearl-kingdom' && (
-                      <PearlKingdomShellVessel size={170} />
-                    )}
-                    {world.id === 'cloud-village' && (
-                      <CloudVillageShellVessel size={170} />
-                    )}
-                    {world.id === 'dinosaur-garden' && (
-                      <DinosaurGardenShellVessel size={170} />
-                    )}
+                    <img
+                      src={world.image}
+                      alt={world.imageAlt}
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-106"
+                      style={{ objectPosition: world.objectPosition || 'center' }}
+                      loading="lazy"
+                      decoding="async"
+                    />
+
+                    {/* Storybook lighting vignette */}
+                    <div
+                      className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-70 group-hover:opacity-40 transition-opacity duration-500"
+                      aria-hidden="true"
+                    />
 
                     {/* Shimmer star accent on hover */}
-                    <div className="absolute top-2 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <DecorativeStar size={14} color="#FFF275" className="animate-star-shimmer" />
+                    <div className="absolute top-2.5 right-2.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      <DecorativeStar size={13} color="#FFFFFF" className="drop-shadow-xs animate-star-shimmer" />
+                    </div>
+
+                    {/* Shell Variant pill in corner */}
+                    <div className="absolute bottom-2.5 left-2.5 z-10 flex items-center gap-1.5 py-0.5 px-2.5 bg-black/50 backdrop-blur-md rounded-full border border-white/25 text-white text-[10px] font-hand font-medium shadow-xs">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#D4BA88]" />
+                      <span>{world.shellType}</span>
                     </div>
                   </div>
 
-                  {/* Tactile Sand Shadow underneath shell */}
+                  {/* Tactile Sand Shadow underneath framed artwork */}
                   <div
-                    className="w-28 sm:w-36 h-3 rounded-full blur-sm opacity-30 mt-2 transition-transform duration-500 group-hover:scale-90"
+                    className="w-36 sm:w-48 h-2.5 rounded-full blur-sm opacity-25 mt-2.5 transition-transform duration-500 group-hover:scale-95"
                     style={{
-                      background: isFirst
-                        ? 'radial-gradient(circle, #0C5A60 0%, transparent 70%)'
-                        : isSecond
-                        ? 'radial-gradient(circle, #8DB6E8 0%, transparent 70%)'
-                        : 'radial-gradient(circle, #386B52 0%, transparent 70%)',
+                      background: 'radial-gradient(circle, #0C5A60 0%, transparent 70%)',
                     }}
                     aria-hidden="true"
                   />
                 </div>
 
                 {/* Name & Short Description */}
-                <div className="text-center pt-5">
+                <div className="text-center pt-4">
                   <h3
-                    className={`font-display font-bold text-xl sm:text-2xl mb-2 transition-colors ${
+                    className={`font-display font-medium text-xl sm:text-2xl mb-2 transition-colors ${
                       isMoonlight
                         ? 'text-ivory-50 group-hover:text-seaglass-300'
-                        : 'text-teal-900 group-hover:text-teal-700'
+                        : 'text-teal-950 group-hover:text-teal-700'
                     }`}
                   >
                     {world.name}
@@ -242,29 +268,29 @@ export const ShellCollectionSection: React.FC = () => {
 
                   <p
                     className={`font-body text-xs sm:text-sm leading-relaxed mb-6 line-clamp-3 transition-colors ${
-                      isMoonlight ? 'text-seaglass-100/80' : 'text-teal-800/80'
+                      isMoonlight ? 'text-seaglass-100/80' : 'text-teal-800/85'
                     }`}
                   >
                     {world.atmosphericDescription}
                   </p>
 
-                  {/* Interactive Button / Trigger */}
+                  {/* Refined Storybook Call-to-Action */}
                   <button
                     type="button"
                     onClick={(e) => {
                       e.stopPropagation();
                       handleSelectWorld(world);
                     }}
-                    className={`w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all border shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 ${
+                    className={`w-full inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-full text-xs font-semibold tracking-wider transition-all border shadow-xs focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 cursor-pointer ${
                       isMoonlight
-                        ? 'bg-midnight-950 text-seaglass-100 border-midnight-700 group-hover:bg-teal-700 group-hover:text-ivory-50'
-                        : 'bg-sand-200/80 text-teal-900 group-hover:bg-teal-800 group-hover:text-ivory-50 border-sand-300'
+                        ? 'bg-midnight-950 text-seaglass-100 border-[#2A4365] group-hover:bg-[#132238] group-hover:border-[#5BB5A2]'
+                        : 'bg-[#FAF7EE] text-teal-900 border-[#D4BA88]/60 group-hover:bg-white group-hover:border-teal-700'
                     }`}
                     aria-haspopup="dialog"
-                    aria-label={`Discover ${world.name}`}
+                    aria-label={`Peer inside ${world.name}`}
                   >
-                    <span>Discover World</span>
-                    <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
+                    <span>Peer Inside the Shell</span>
+                    <span aria-hidden="true" className="text-[#D4BA88] transition-transform group-hover:translate-x-1">
                       &rarr;
                     </span>
                   </button>
@@ -274,19 +300,15 @@ export const ShellCollectionSection: React.FC = () => {
           })}
         </div>
 
-        {/* Ambient bottom coastal detail */}
+        {/* Ambient bottom coastal flourish note */}
         <div className="mt-14 sm:mt-16 text-center">
-          <div
-            className={`inline-flex items-center gap-3 px-5 py-2.5 rounded-full border shadow-sm text-xs transition-colors ${
-              isMoonlight
-                ? 'bg-midnight-900/80 border-midnight-700 text-seaglass-200'
-                : 'bg-white/70 border-sand-300 text-teal-800/80'
+          <p
+            className={`font-hand text-sm sm:text-base transition-colors ${
+              isMoonlight ? 'text-seaglass-300' : 'text-teal-700/75'
             }`}
           >
-            <span className="w-2 h-2 rounded-full bg-seaglass-500 animate-pulse" />
-            <span>Click any seashell to open its immersive environment view</span>
-            <BubbleCluster className="scale-75 hidden sm:flex" />
-          </div>
+            Touch any seashell to unveil its miniature painted landscape &bull;
+          </p>
         </div>
       </div>
 

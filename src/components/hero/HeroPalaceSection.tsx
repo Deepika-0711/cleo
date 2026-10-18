@@ -89,10 +89,23 @@ export const HeroPalaceSection: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Narrative Header & Lead */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-          {/* Main Title */}
+          {/* Poetic Chapter Eyebrow */}
+          <div className="inline-flex items-center gap-2 mb-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D4BA88]" />
+            <span
+              className={`font-mono text-[11px] uppercase tracking-[0.24em] font-medium transition-colors ${
+                isMoonlight ? 'text-seaglass-300' : 'text-teal-700/80'
+              }`}
+            >
+              Prologue &bull; An Enchanted Shoreline
+            </span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D4BA88]" />
+          </div>
+
+          {/* Main Storybook Title */}
           <h1
-            className={`font-display font-medium text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.12] mb-4 transition-colors ${
-              isMoonlight ? 'text-ivory-50' : 'text-teal-900'
+            className={`font-display italic font-normal text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.12] mb-4 transition-colors ${
+              isMoonlight ? 'text-ivory-50' : 'text-teal-950'
             }`}
           >
             Cleo &mdash; The Girl Who Collects Worlds
@@ -100,7 +113,7 @@ export const HeroPalaceSection: React.FC = () => {
 
           {/* Descriptive narrative lead */}
           <p
-            className={`font-body text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-6 transition-colors ${
+            className={`font-body text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-6 transition-colors ${
               isMoonlight ? 'text-seaglass-100/80' : 'text-teal-800/85'
             }`}
           >
@@ -108,37 +121,39 @@ export const HeroPalaceSection: React.FC = () => {
             a grand palace fashioned entirely from pearlescent shells, living coral, and glowing sea-glass.
           </p>
 
-          {/* Functional Navigation Action Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-3">
+          {/* Functional Editorial Navigation Actions */}
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 mb-2">
             <a
               href="#collection"
-              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-semibold tracking-wide bg-teal-800 text-ivory-50 hover:bg-teal-700 active:scale-[0.98] transition-all shadow-storybook hover:shadow-storybook-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 focus-visible:ring-offset-2"
+              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wide bg-teal-850 text-ivory-50 hover:bg-teal-700 active:scale-[0.98] transition-all border border-[#D4BA88]/40 shadow-storybook hover:shadow-storybook-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 focus-visible:ring-offset-2"
+              style={{ backgroundColor: '#0C5A60' }}
             >
-              <ShellIcon variant="nautilus" size={18} color="#FAF7EE" accentColor="#5BB5A2" />
-              <span>Explore Shell Worlds</span>
+              <ShellIcon variant="nautilus" size={17} color="#FAF7EE" accentColor="#D4BA88" />
+              <span>Explore the Shell Worlds</span>
+              <span aria-hidden="true" className="text-[#D4BA88]">&rarr;</span>
             </a>
 
             <a
               href="#journey"
-              className={`inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold transition-all border shadow-sm active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 ${
+              className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all border focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 ${
                 isMoonlight
-                  ? 'bg-midnight-900 text-ivory-100 border-midnight-700 hover:bg-midnight-850'
-                  : 'bg-white/90 text-teal-900 border-sand-300 hover:bg-white hover:border-teal-600'
+                  ? 'bg-midnight-900/80 text-seaglass-200 border-midnight-700 hover:bg-midnight-800'
+                  : 'bg-white/80 text-teal-900 border-[#D4BA88]/50 hover:bg-white hover:border-teal-700'
               }`}
             >
-              <DecorativeStar size={14} color="#F48B76" />
+              <DecorativeStar size={12} color="#D4BA88" />
               <span>Read Cleo’s Story</span>
             </a>
 
             <a
               href="#about"
-              className={`inline-flex items-center gap-2 px-4 py-3 rounded-full text-xs font-semibold uppercase tracking-wider transition-all border focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 ${
+              className={`inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 ${
                 isMoonlight
-                  ? 'bg-midnight-950 text-seaglass-300 border-midnight-700 hover:border-seaglass-400'
-                  : 'bg-sand-100 text-teal-800 border-sand-300 hover:bg-sand-200'
+                  ? 'text-seaglass-300 hover:text-white'
+                  : 'text-teal-800/80 hover:text-teal-950'
               }`}
             >
-              <span>Character Sheet</span>
+              <span>Character Profile</span>
               <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
@@ -146,14 +161,20 @@ export const HeroPalaceSection: React.FC = () => {
 
         {/* Central Seashell Palace & Beach Composition with Cleo in the Foreground */}
         <div className="relative mx-auto max-w-5xl">
-          {/* Storybook Outer Frame with Delicate Double Borders and Ambient Shadows */}
+          {/* Storybook Illuminated Plate Frame with Delicate Gilded Borders */}
           <div
             className={`relative rounded-3xl sm:rounded-4xl overflow-hidden border p-2 sm:p-3 transition-all duration-700 shadow-storybook-hover ${
               isMoonlight
-                ? 'bg-midnight-900/90 border-midnight-700 shadow-night'
-                : 'bg-gradient-to-b from-white via-sand-50 to-sand-100 border-sand-300'
+                ? 'bg-midnight-900/90 border-[#2A4365] shadow-night'
+                : 'bg-gradient-to-b from-white via-sand-50 to-[#F7F2E7] border-[#D4BA88]/50'
             }`}
           >
+            {/* Corner pearl studs for authentic storybook bookplate framing */}
+            <span className="absolute top-2.5 left-2.5 w-2 h-2 rounded-full bg-white border border-[#D4BA88] shadow-xs z-30" />
+            <span className="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-white border border-[#D4BA88] shadow-xs z-30" />
+            <span className="absolute bottom-2.5 left-2.5 w-2 h-2 rounded-full bg-white border border-[#D4BA88] shadow-xs z-30" />
+            <span className="absolute bottom-2.5 right-2.5 w-2 h-2 rounded-full bg-white border border-[#D4BA88] shadow-xs z-30" />
+
             {/* Aspect-Ratio Box preserving the full palace silhouette & Cleo on all screens */}
             <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] min-h-[260px] sm:min-h-0 rounded-2xl sm:rounded-3xl overflow-hidden bg-sand-200">
               {/* Background Layer: Primary Palace & Beach Illustrated Scene */}
@@ -186,17 +207,17 @@ export const HeroPalaceSection: React.FC = () => {
               />
 
               {/* Atmospheric Floating Stars & Bubbles over beach */}
-              <div className="absolute top-6 left-6 pointer-events-none opacity-80" aria-hidden="true">
+              <div className="absolute top-6 left-6 pointer-events-none opacity-75" aria-hidden="true">
                 <StarCluster />
               </div>
-              <div className="absolute top-12 right-8 pointer-events-none opacity-75" aria-hidden="true">
-                <DecorativeStar size={24} color="#F48B76" className="animate-star-shimmer" />
+              <div className="absolute top-12 right-8 pointer-events-none opacity-70" aria-hidden="true">
+                <DecorativeStar size={20} color="#D4BA88" className="animate-star-shimmer" />
               </div>
-              <div className="absolute bottom-8 left-8 pointer-events-none opacity-60 hidden sm:block" aria-hidden="true">
+              <div className="absolute bottom-8 left-8 pointer-events-none opacity-50 hidden sm:block" aria-hidden="true">
                 <BubbleCluster />
               </div>
 
-              {/* Palace Architectural Hotspots */}
+              {/* Palace Architectural Hotspots - Luminous Starlight Pearl Pins */}
               {PALACE_HOTSPOTS.map((hotspot) => {
                 const isSelected = selectedHotspot?.id === hotspot.id;
                 return (
@@ -205,26 +226,27 @@ export const HeroPalaceSection: React.FC = () => {
                     type="button"
                     onClick={() => setSelectedHotspot(isSelected ? null : hotspot)}
                     onMouseEnter={() => setSelectedHotspot(hotspot)}
-                    aria-label={`Explore detail: ${hotspot.name}`}
+                    aria-label={`Explore architectural curiosity: ${hotspot.name}`}
                     aria-expanded={isSelected}
                     style={{ top: hotspot.top, left: hotspot.left }}
-                    className={`group absolute -translate-x-1/2 -translate-y-1/2 w-7 h-7 sm:w-9 sm:h-9 rounded-full flex items-center justify-center transition-all focus:outline-none focus-visible:ring-4 focus-visible:ring-coral-400 z-10 ${
+                    className={`group absolute -translate-x-1/2 -translate-y-1/2 w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 z-10 cursor-pointer ${
                       isSelected
-                        ? 'scale-125 ring-4 ring-coral-400 bg-white shadow-lg'
-                        : 'bg-white/85 hover:bg-white hover:scale-110 shadow-md ring-2 ring-teal-800/20'
+                        ? 'scale-125 bg-white shadow-lg ring-2 ring-[#D4BA88]'
+                        : 'bg-white/90 hover:bg-white hover:scale-115 shadow-sm border border-[#D4BA88]/60'
                     }`}
                   >
+                    {/* Breathing Starlight Halo */}
                     <span
-                      className={`absolute inset-0 rounded-full animate-ping opacity-35 ${
-                        isSelected ? 'bg-coral-400' : 'bg-teal-500'
+                      className={`absolute -inset-1 rounded-full blur-xs transition-opacity animate-pearl-pulse ${
+                        isSelected ? 'bg-[#D4BA88]/50 opacity-90' : 'bg-seaglass-300/40 opacity-40 group-hover:opacity-75'
                       }`}
                       aria-hidden="true"
                     />
                     <ShellIcon
                       variant={hotspot.shellVariant}
-                      size={16}
-                      color={isSelected ? '#F48B76' : '#0C5A60'}
-                      accentColor={isSelected ? '#0C5A60' : '#5BB5A2'}
+                      size={14}
+                      color={isSelected ? '#0C5A60' : '#0C5A60'}
+                      accentColor={isSelected ? '#D4BA88' : '#5BB5A2'}
                     />
                   </button>
                 );
@@ -236,57 +258,41 @@ export const HeroPalaceSection: React.FC = () => {
               {/* FEATURE 1: CLEO NOTICES YOU — INTERACTIVE STORYBOOK CHARACTER */}
               <CleoNoticesYou isMoonlight={isMoonlight} />
 
-              {/* FEATURE 2: SCENE ATMOSPHERE TOGGLE BADGE (SUNSHINE VS MOONLIGHT) */}
+              {/* FEATURE 2: SCENE ATMOSPHERE CELESTIAL CHARM (SUNSHINE VS MOONLIGHT) */}
               <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 flex items-center gap-2">
-
                 <button
                   type="button"
                   onClick={toggleThemeMode}
-                  className={`flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md border shadow-md transition-all active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 ${
+                  className={`flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md border shadow-sm transition-all active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 ${
                     isMoonlight
                       ? 'bg-midnight-950/85 text-seaglass-200 border-midnight-700 hover:bg-midnight-900'
-                      : 'bg-ivory-50/90 text-teal-900 border-sand-300 hover:bg-white'
+                      : 'bg-ivory-50/90 text-teal-900 border-[#D4BA88]/60 hover:bg-white'
                   }`}
                   aria-pressed={isMoonlight}
-                  aria-label={`Toggle theme: Currently in ${isMoonlight ? 'Moonlight' : 'Sunshine'} mode`}
+                  aria-label={`Toggle atmosphere: Currently in ${isMoonlight ? 'Moonlight' : 'Sunshine'} mode`}
                   title="Toggle between Sunshine golden-hour and Moonlight starlight atmosphere"
                 >
                   <span
-                    className={`w-2.5 h-2.5 rounded-full ${
-                      isMoonlight ? 'bg-seaglass-400 animate-pulse' : 'bg-coral-400'
+                    className={`w-2 h-2 rounded-full ${
+                      isMoonlight ? 'bg-seaglass-400 animate-pulse' : 'bg-[#D4BA88]'
                     }`}
                   />
-                  <span className="hidden sm:inline">
-                    {isMoonlight ? 'Moonlight Mode' : 'Sunshine Mode'}
+                  <span className="hidden sm:inline font-body text-[11px] tracking-wide">
+                    {isMoonlight ? 'Moonlight Atmosphere' : 'Sunshine Atmosphere'}
                   </span>
                   <span className="text-[11px] font-hand text-coral-600 sm:hidden">
                     {isMoonlight ? 'Moon' : 'Sun'}
                   </span>
                 </button>
               </div>
-
-              {/* Mobile / Screen-reader hint */}
-              <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-20 pointer-events-none">
-                <span
-                  className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium backdrop-blur-md border shadow-sm ${
-                    isMoonlight
-                      ? 'bg-midnight-950/75 text-seaglass-300 border-midnight-700'
-                      : 'bg-white/80 text-teal-800 border-sand-300'
-                  }`}
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-coral-400 animate-ping" />
-                  <span className="hidden sm:inline">Cleo &bull; Beach &bull; Palace &bull; Touch or click</span>
-                  <span className="sm:hidden">Tap Cleo or beach</span>
-                </span>
-              </div>
             </div>
 
-            {/* Selected Hotspot Storybook Lore Banner */}
+            {/* Selected Hotspot Storybook Lore Footnote */}
             <div
               className={`mt-2 p-3 sm:p-4 rounded-xl sm:rounded-2xl border transition-all duration-300 ${
                 isMoonlight
                   ? 'bg-midnight-950/90 border-midnight-800 text-ivory-100'
-                  : 'bg-white/95 border-sand-300 text-teal-900'
+                  : 'bg-white/95 border-[#D4BA88]/50 text-teal-900'
               }`}
             >
               {selectedHotspot ? (
@@ -296,26 +302,26 @@ export const HeroPalaceSection: React.FC = () => {
                       className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 border ${
                         isMoonlight
                           ? 'bg-midnight-900 border-midnight-700'
-                          : 'bg-sand-100 border-sand-300'
+                          : 'bg-sand-100 border-[#D4BA88]/50'
                       }`}
                     >
                       <ShellIcon
                         variant={selectedHotspot.shellVariant}
-                        size={20}
+                        size={18}
                         color={isMoonlight ? '#5BB5A2' : '#0C5A60'}
-                        accentColor="#F48B76"
+                        accentColor="#D4BA88"
                       />
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h4 className="font-display font-bold text-base sm:text-lg leading-tight">
+                        <h4 className="font-display font-medium text-base sm:text-lg leading-tight">
                           {selectedHotspot.name}
                         </h4>
-                        <span className="text-xs font-hand text-coral-500 font-semibold">
+                        <span className="text-xs font-hand text-[#D4BA88] font-semibold">
                           &bull; {selectedHotspot.tagline}
                         </span>
                       </div>
-                      <p className="text-xs sm:text-sm opacity-80 leading-relaxed font-body mt-0.5">
+                      <p className="text-xs sm:text-sm opacity-85 leading-relaxed font-body mt-0.5 max-w-2xl">
                         {selectedHotspot.description}
                       </p>
                     </div>
@@ -323,22 +329,21 @@ export const HeroPalaceSection: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setSelectedHotspot(null)}
-                    className="text-xs uppercase tracking-wider font-semibold opacity-60 hover:opacity-100 underline self-end sm:self-center"
+                    className="text-xs uppercase tracking-wider font-semibold opacity-60 hover:opacity-100 underline self-end sm:self-center cursor-pointer"
                   >
                     Close
                   </button>
                 </div>
               ) : (
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs sm:text-sm opacity-80 font-body py-0.5 px-1">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs sm:text-sm opacity-85 font-body py-0.5 px-1">
                   <span className="flex items-center gap-2">
-                    <DecorativeStar size={12} color="#5BB5A2" />
+                    <DecorativeStar size={11} color="#D4BA88" />
                     <span>
-                      <strong>Cleo on the Enchanted Beach:</strong> Standing before her central seashell palace with
-                      cream lace dress and seashell tiara, listening to the gentle turquoise tide.
+                      <strong>The Seashell Palace at Golden Hour:</strong> Luminous conch spires, fluted scallop gates, and tranquil turquoise tidal pools.
                     </span>
                   </span>
-                  <span className="text-xs font-hand text-coral-600 font-semibold self-start sm:self-center">
-                    Tap Cleo to greet her &bull; Search the sand for secrets
+                  <span className="text-xs font-hand text-[#D4BA88] font-semibold self-start sm:self-center">
+                    Touch Cleo to greet her &bull; Tap pearl markers to explore
                   </span>
                 </div>
               )}
@@ -347,7 +352,7 @@ export const HeroPalaceSection: React.FC = () => {
         </div>
 
         {/* Storybook flourish transition */}
-        <StorybookFlourish className="mt-12 mb-0" />
+        <StorybookFlourish className="mt-14 mb-0" />
       </div>
     </section>
   );

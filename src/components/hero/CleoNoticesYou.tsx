@@ -143,15 +143,15 @@ export const CleoNoticesYou: React.FC<CleoNoticesYouProps> = ({ isMoonlight }) =
         <div
           role="status"
           aria-live="polite"
-          className={`absolute bottom-[calc(100%+8px)] sm:bottom-[calc(100%+14px)] right-0 sm:-right-4 w-48 sm:w-64 max-w-[calc(100vw-3rem)] p-2.5 sm:p-3 rounded-2xl shadow-storybook border text-left z-30 animate-float-gentle transition-colors duration-300 ${
+          className={`absolute bottom-[calc(100%+8px)] sm:bottom-[calc(100%+14px)] right-0 sm:-right-4 w-52 sm:w-68 max-w-[calc(100vw-3rem)] p-3 sm:p-3.5 rounded-2xl shadow-storybook border text-left z-30 animate-float-gentle transition-colors duration-300 ${
             isMoonlight
-              ? 'bg-midnight-950/95 border-midnight-700 text-ivory-100 shadow-night'
-              : 'bg-white/95 border-sand-300 text-teal-900 shadow-storybook-hover'
+              ? 'bg-midnight-950/95 border-[#2A4365] text-ivory-100 shadow-night'
+              : 'bg-[#FFFDF9]/95 border-[#D4BA88]/70 text-teal-950 shadow-storybook-hover'
           }`}
         >
-          <div className="flex items-center justify-between gap-1 mb-1">
-            <span className="text-[10px] uppercase tracking-wider font-semibold text-coral-600 font-body flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-coral-400 animate-pulse" />
+          <div className="flex items-center justify-between gap-1 mb-1.5 pb-1 border-b border-[#D4BA88]/30">
+            <span className="text-[10px] uppercase tracking-wider font-semibold font-mono flex items-center gap-1.5 text-[#D4BA88]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#5BB5A2] animate-pulse" />
               <span>Cleo Whispers</span>
             </span>
             <button
@@ -160,15 +160,15 @@ export const CleoNoticesYou: React.FC<CleoNoticesYouProps> = ({ isMoonlight }) =
                 e.stopPropagation();
                 setSpeechBubbleOpen(false);
               }}
-              className="w-6 h-6 flex items-center justify-center text-sm opacity-60 hover:opacity-100 rounded transition-opacity focus:outline-none focus-visible:ring-1 focus-visible:ring-coral-400"
+              className="w-5 h-5 flex items-center justify-center text-xs opacity-60 hover:opacity-100 rounded transition-opacity cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-coral-400"
               aria-label="Close Cleo's message"
             >
               &times;
             </button>
           </div>
           <p
-            className={`font-hand text-xs sm:text-sm leading-snug ${
-              isMoonlight ? 'text-ivory-100' : 'text-teal-900'
+            className={`font-hand text-sm sm:text-base leading-snug ${
+              isMoonlight ? 'text-ivory-100' : 'text-teal-950'
             }`}
           >
             &ldquo;{speechText}&rdquo;
@@ -177,8 +177,8 @@ export const CleoNoticesYou: React.FC<CleoNoticesYouProps> = ({ isMoonlight }) =
           <div
             className={`absolute -bottom-2 right-10 sm:right-12 w-3 h-3 rotate-45 border-r border-b ${
               isMoonlight
-                ? 'bg-midnight-950 border-midnight-700'
-                : 'bg-white border-sand-300'
+                ? 'bg-midnight-950 border-[#2A4365]'
+                : 'bg-[#FFFDF9] border-[#D4BA88]/70'
             }`}
             aria-hidden="true"
           />
@@ -300,21 +300,21 @@ export const CleoNoticesYou: React.FC<CleoNoticesYouProps> = ({ isMoonlight }) =
           </div>
         </div>
 
-        {/* Character Interaction Pill */}
-        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap">
+        {/* Character Interaction Tag */}
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap pointer-events-none">
           <span
-            className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-semibold tracking-wide backdrop-blur-md border shadow-md transition-all group-hover:scale-105 ${
+            className={`inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[11px] font-hand font-semibold tracking-wide backdrop-blur-md border shadow-sm transition-all group-hover:scale-105 ${
               isMoonlight
                 ? 'bg-midnight-950/90 text-seaglass-200 border-midnight-700'
-                : 'bg-white/90 text-teal-900 border-sand-300'
+                : 'bg-white/95 text-teal-950 border-[#D4BA88]/60'
             }`}
           >
             <span
               className={`w-1.5 h-1.5 rounded-full ${
-                isCurious ? 'bg-amber-400 scale-125' : 'bg-coral-400 animate-pulse'
+                isCurious ? 'bg-[#D4BA88] scale-125' : 'bg-coral-400'
               }`}
             />
-            <span>{isCurious ? 'Cleo Notices You!' : 'Meet Cleo'}</span>
+            <span>{isCurious ? 'Cleo Smiles! ♡' : 'Cleo ♡'}</span>
           </span>
         </div>
       </div>

@@ -5,7 +5,7 @@ import { StoryJourneySection } from './components/story/StoryJourneySection';
 import { LivingShellDiarySection } from './components/profile/LivingShellDiarySection';
 import { StorybookFooter } from './components/layout/StorybookFooter';
 import { Header } from './components/layout/Header';
-import { WaveDivider } from './design-system/OrganicBorder';
+import { StorybookFlourish } from './design-system/OrganicBorder';
 import { PaperTexture } from './design-system/PaperTexture';
 import { SoundProvider } from './design-system/SoundContext';
 import { ThemeProvider } from './design-system/ThemeContext';
@@ -35,8 +35,10 @@ const AppContent: React.FC = () => {
         {/* Section 2: Interactive Shell Collection & Miniature Worlds */}
         <ShellCollectionSection />
 
-        {/* Wave transition into Chapter 1 Story Journey */}
-        <WaveDivider fillColor={isMoonlight ? '#0B1320' : '#FFF9F0'} />
+        {/* Delicate Chapter Transition into Story Journey */}
+        <div className="max-w-4xl mx-auto px-4" aria-hidden="true">
+          <StorybookFlourish className="my-0 opacity-70" />
+        </div>
 
         {/* Section 3: The Art-Directed Story Journey */}
         <StoryJourneySection />

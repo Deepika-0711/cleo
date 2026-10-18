@@ -23,29 +23,30 @@ export const StorybookFooter: React.FC = () => {
     <footer
       id="footer"
       aria-label="The Last Page of Cleo’s Story"
-      className={`relative pt-20 sm:pt-28 pb-16 overflow-hidden transition-colors duration-700 border-t ${
-        isMoonlight
-          ? 'bg-gradient-to-b from-[#09101E] via-[#0B1322] to-[#070C16] border-midnight-800 text-ivory-50'
-          : 'bg-gradient-to-b from-[#FFF9F0] via-[#FAF7EE] to-[#F5EFEB] border-sand-300/80 text-teal-900'
-      }`}
+      className="relative pt-20 sm:pt-28 pb-16 overflow-hidden transition-colors duration-700 border-t"
+      style={{
+        backgroundColor: isMoonlight ? '#09111E' : '#FAF7EE',
+        borderColor: isMoonlight ? 'rgba(42, 67, 101, 0.4)' : 'rgba(212, 186, 136, 0.35)',
+        color: isMoonlight ? '#FDFAF5' : '#0C5A60',
+      }}
     >
       {/* Sunset Golden-Hour or Moonlit Starlight Ambient Atmosphere Glow */}
       <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] sm:w-[1000px] h-[350px] rounded-full blur-3xl pointer-events-none opacity-45 transition-all duration-700"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] sm:w-[1000px] h-[350px] rounded-full blur-3xl pointer-events-none opacity-40 transition-all duration-700"
         style={{
           background: isMoonlight
-            ? 'radial-gradient(circle at 50% 0%, rgba(91, 181, 162, 0.35) 0%, rgba(20, 32, 60, 0.5) 60%, transparent 80%)'
-            : 'radial-gradient(circle at 50% 0%, rgba(244, 139, 118, 0.35) 0%, rgba(254, 215, 170, 0.25) 50%, transparent 80%)',
+            ? 'radial-gradient(circle at 50% 0%, rgba(91, 181, 162, 0.3) 0%, rgba(20, 32, 60, 0.5) 60%, transparent 80%)'
+            : 'radial-gradient(circle at 50% 0%, rgba(212, 186, 136, 0.45) 0%, rgba(244, 139, 118, 0.2) 50%, transparent 80%)',
         }}
         aria-hidden="true"
       />
 
       {/* Decorative Constellations in Footer Sky */}
-      <div className="absolute top-8 left-8 sm:left-16 pointer-events-none opacity-70 hidden sm:block" aria-hidden="true">
+      <div className="absolute top-8 left-8 sm:left-16 pointer-events-none opacity-60 hidden sm:block" aria-hidden="true">
         <StarCluster />
       </div>
-      <div className="absolute top-10 right-8 sm:right-16 pointer-events-none opacity-75 hidden sm:block" aria-hidden="true">
-        <DecorativeStar size={20} color={isMoonlight ? '#80DEEA' : '#F48B76'} className="animate-star-shimmer" />
+      <div className="absolute top-10 right-8 sm:right-16 pointer-events-none opacity-70 hidden sm:block" aria-hidden="true">
+        <DecorativeStar size={20} color="#D4BA88" className="animate-star-shimmer" />
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -54,39 +55,39 @@ export const StorybookFooter: React.FC = () => {
           <div
             className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 p-1.5 flex items-center justify-center shadow-storybook transition-all duration-500 hover:scale-105 ${
               isMoonlight
-                ? 'bg-midnight-900/90 border-seaglass-400/40 shadow-night'
-                : 'bg-white border-sand-300 shadow-storybook-hover'
+                ? 'bg-midnight-900/90 border-[#D4BA88]/50 shadow-night'
+                : 'bg-white border-[#D4BA88]/60 shadow-storybook-hover'
             }`}
           >
             <div
               className={`w-full h-full rounded-full border flex items-center justify-center animate-float-gentle ${
                 isMoonlight
                   ? 'bg-midnight-950 border-midnight-700'
-                  : 'bg-sand-50 border-sand-200'
+                  : 'bg-[#FAF7EE] border-[#D4BA88]/30'
               }`}
             >
               <ShellIcon
                 variant="nautilus"
                 size={34}
                 color={isMoonlight ? '#5BB5A2' : '#0C5A60'}
-                accentColor="#F48B76"
+                accentColor="#D4BA88"
               />
             </div>
           </div>
 
           {/* Miniature pearl divider */}
-          <div className="flex items-center gap-2 mt-4 text-xs font-mono uppercase tracking-[0.2em] opacity-75">
-            <span className="w-1.5 h-1.5 rounded-full bg-coral-400" />
-            <span>THE LAST PAGE</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-coral-400" />
+          <div className="flex items-center gap-2 mt-4 text-xs font-mono uppercase tracking-[0.24em] opacity-75">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D4BA88]" />
+            <span className={isMoonlight ? 'text-seaglass-300' : 'text-[#D4BA88]'}>THE LAST PAGE</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D4BA88]" />
           </div>
         </div>
 
         {/* CLOSING STORYBOOK LINE */}
         <blockquote className="mb-4">
           <p
-            className={`font-display font-medium text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight leading-[1.2] max-w-3xl mx-auto transition-colors ${
-              isMoonlight ? 'text-ivory-50' : 'text-teal-900'
+            className={`font-display italic font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.18] max-w-3xl mx-auto transition-colors ${
+              isMoonlight ? 'text-ivory-50' : 'text-teal-950'
             }`}
           >
             &ldquo;Every little shell holds a whole universe.&rdquo;
@@ -97,7 +98,7 @@ export const StorybookFooter: React.FC = () => {
         <div className="mb-8">
           <p
             className={`font-hand text-2xl sm:text-3xl transition-colors ${
-              isMoonlight ? 'text-coral-400' : 'text-coral-600'
+              isMoonlight ? 'text-[#D4BA88]' : 'text-[#DE6B54]'
             }`}
           >
             With wonder, Cleo ♡
@@ -122,20 +123,20 @@ export const StorybookFooter: React.FC = () => {
             href="#hero"
             onClick={scrollToTop}
             aria-label="Back to the beginning of Cleo's storybook"
-            className={`inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wide border shadow-sm transition-all duration-300 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 ${
+            className={`inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wide border shadow-xs transition-all duration-300 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 ${
               isMoonlight
-                ? 'bg-midnight-900/90 text-seaglass-200 border-midnight-700 hover:bg-midnight-800 hover:border-seaglass-400 shadow-night'
-                : 'bg-white/95 text-teal-900 border-sand-300 hover:bg-white hover:border-teal-600 shadow-storybook'
+                ? 'bg-midnight-900/90 text-seaglass-200 border-[#2A4365] hover:bg-midnight-800 hover:border-seaglass-400 shadow-night'
+                : 'bg-white text-teal-950 border-[#D4BA88]/60 hover:bg-[#FAF7EE] hover:border-teal-700 shadow-storybook'
             }`}
           >
             <ShellIcon
               variant="scallop"
-              size={16}
+              size={15}
               color={isMoonlight ? '#5BB5A2' : '#0C5A60'}
-              accentColor="#F48B76"
+              accentColor="#D4BA88"
             />
             <span>Back to the beginning</span>
-            <span aria-hidden="true" className="transition-transform group-hover:-translate-y-0.5">
+            <span aria-hidden="true" className="text-[#D4BA88] transition-transform group-hover:-translate-y-0.5">
               &uarr;
             </span>
           </a>

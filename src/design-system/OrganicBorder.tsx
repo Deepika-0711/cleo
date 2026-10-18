@@ -41,11 +41,11 @@ export const WaveDivider: React.FC<WaveDividerProps> = ({
 export const StorybookFlourish: React.FC<{ className?: string }> = ({ className = '' }) => {
   return (
     <div className={`flex items-center justify-center gap-3 my-6 ${className}`} aria-hidden="true">
-      <div className="h-px w-16 sm:w-28 bg-gradient-to-r from-transparent via-teal-800/25 to-teal-800/40" />
-      <DecorativeStar size={10} color="#5BB5A2" />
-      <ShellIcon variant="scallop" size={20} color="#0C5A60" accentColor="#5BB5A2" />
-      <DecorativeStar size={10} color="#F48B76" />
-      <div className="h-px w-16 sm:w-28 bg-gradient-to-l from-transparent via-teal-800/25 to-teal-800/40" />
+      <div className="h-px w-20 sm:w-36 bg-gradient-to-r from-transparent via-[#D4BA88]/45 to-transparent" />
+      <DecorativeStar size={9} color="#D4BA88" />
+      <ShellIcon variant="scallop" size={18} color="#D4BA88" accentColor="#5BB5A2" />
+      <DecorativeStar size={9} color="#D4BA88" />
+      <div className="h-px w-20 sm:w-36 bg-gradient-to-l from-transparent via-[#D4BA88]/45 to-transparent" />
     </div>
   );
 };

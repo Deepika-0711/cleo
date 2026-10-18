@@ -43,10 +43,24 @@
   --color-sand-400: #C7B299;
   --color-sand-500: #A89073;
 
+  /* Refined Fairytale Champagne Gold & Seashell Blush Tokens */
+  --color-gold-100: #FBF6EC;
+  --color-gold-200: #F4E8D0;
+  --color-gold-300: #E7D4B0;
+  --color-gold-400: #D4BA88;
+  --color-gold-500: #BF9F65;
+  --color-gold-600: #9E7F47;
+
+  --color-blush-50: #FDF7F5;
+  --color-blush-100: #FAECE8;
+  --color-blush-200: #F5D9D2;
+  --color-blush-300: #EABDB3;
+  --color-blush-400: #DE9E91;
+
   --color-midnight-700: #243356;
   --color-midnight-800: #1A2542;
   --color-midnight-900: #111A38;
-  --color-midnight-950: #0B1124;
+  --color-midnight-950: #09111E;
 }
 
 /* Custom Base & Storybook Aesthetics */
@@ -63,17 +77,17 @@ body {
   overflow-x: hidden;
 }
 
-/* Storybook Delicate Shadows */
+/* Storybook Delicate Shadows - Soft, diffused, warm paper depth */
 .shadow-storybook {
-  box-shadow: 0 10px 25px -4px rgba(12, 90, 96, 0.08), 0 4px 10px -2px rgba(12, 90, 96, 0.04);
+  box-shadow: 0 10px 30px -8px rgba(12, 70, 75, 0.07), 0 3px 10px -2px rgba(12, 70, 75, 0.03);
 }
 
 .shadow-storybook-hover {
-  box-shadow: 0 16px 32px -4px rgba(12, 90, 96, 0.12), 0 6px 14px -2px rgba(12, 90, 96, 0.06);
+  box-shadow: 0 18px 40px -8px rgba(12, 70, 75, 0.11), 0 6px 16px -2px rgba(12, 70, 75, 0.05);
 }
 
 .shadow-night {
-  box-shadow: 0 14px 30px -4px rgba(0, 0, 0, 0.35), 0 4px 12px -2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.45), 0 6px 16px -2px rgba(0, 0, 0, 0.35);
 }
 
 /* Storybook Handcrafted Borders */
@@ -85,58 +99,77 @@ body {
   border: 1px solid rgba(12, 90, 96, 0.12);
 }
 
+.border-gold-delicate {
+  border: 1px solid rgba(212, 186, 136, 0.38);
+}
+
 .border-dashed-delicate {
-  border: 1.5px dashed rgba(12, 90, 96, 0.2);
+  border: 1.5px dashed rgba(212, 186, 136, 0.45);
 }
 
-/* Paper Grain Texture (SVG noise simulated via CSS) */
+/* Paper Grain Texture (Subtle starlight & sand noise simulated via CSS) */
 .paper-grain {
-  background-image: radial-gradient(rgba(12, 90, 96, 0.04) 1px, transparent 0);
-  background-size: 16px 16px;
+  background-image: radial-gradient(rgba(12, 90, 96, 0.035) 1px, transparent 0);
+  background-size: 20px 20px;
 }
 
-/* Gentle Micro-Animations */
+/* Gentle, Restrained Micro-Animations */
 @keyframes floatGentle {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
   }
 }
 
 @keyframes bubbleDrift {
   0%, 100% {
     transform: translateY(0) scale(1);
-    opacity: 0.6;
+    opacity: 0.55;
   }
   50% {
-    transform: translateY(-8px) scale(1.05);
-    opacity: 0.85;
+    transform: translateY(-6px) scale(1.03);
+    opacity: 0.8;
   }
 }
 
 @keyframes starShimmer {
   0%, 100% {
-    transform: scale(0.9) rotate(0deg);
-    opacity: 0.45;
+    transform: scale(0.92) rotate(0deg);
+    opacity: 0.4;
   }
   50% {
-    transform: scale(1.1) rotate(6deg);
+    transform: scale(1.08) rotate(4deg);
     opacity: 0.95;
   }
 }
 
+@keyframes pearlPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.9;
+  }
+}
+
 .animate-float-gentle {
-  animation: floatGentle 5s ease-in-out infinite;
+  animation: floatGentle 6.5s ease-in-out infinite;
 }
 
 .animate-bubble-drift {
-  animation: bubbleDrift 4s ease-in-out infinite;
+  animation: bubbleDrift 5s ease-in-out infinite;
 }
 
 .animate-star-shimmer {
-  animation: starShimmer 3s ease-in-out infinite;
+  animation: starShimmer 4s ease-in-out infinite;
+}
+
+.animate-pearl-pulse {
+  animation: pearlPulse 3.5s ease-in-out infinite;
 }
 
 /* Accessibility: Reduced Motion */

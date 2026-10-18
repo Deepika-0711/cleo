@@ -3,16 +3,14 @@ import cleoBeachPainting from '../../assets/cleo_3d.jpg';
 import cleoCharacterImg from '../../assets/cleo-hero-transparent.png';
 import palaceBeachImg from '../../assets/seashell-palace.jpg';
 import { Badge } from '../../design-system/Badge';
-import { DecorativeBubble } from '../../design-system/DecorativeBubbles';
+
 import { DecorativeStar } from '../../design-system/DecorativeStars';
 import { StorybookFlourish } from '../../design-system/OrganicBorder';
 import { ShellIcon } from '../../design-system/ShellIcon';
 import { useTheme } from '../../design-system/useTheme';
-import {
-  CloudVillageShellVessel,
-  DinosaurGardenShellVessel,
-  PearlKingdomShellVessel,
-} from '../collection/ShellVesselIllustrations';
+import cloudVillageImg from '../../assets/cloud-village.jpg';
+import dinosaurGardenImg from '../../assets/dinosaur-garden.jpg';
+import pearlKingdomImg from '../../assets/pearl-kingdom.jpg';
 
 export const StoryJourneySection: React.FC = () => {
   const { isMoonlight } = useTheme();
@@ -23,15 +21,15 @@ export const StoryJourneySection: React.FC = () => {
       id="journey"
       aria-labelledby="journey-heading"
       className="relative scroll-mt-20 py-20 sm:py-28 lg:py-32 overflow-hidden transition-colors duration-700"
-      style={{ backgroundColor: isMoonlight ? '#0B1320' : '#FFF9F0' }} // Warm pearl ivory or deep nocturnal ink
+      style={{ backgroundColor: isMoonlight ? '#09111E' : '#FAF7EE' }}
     >
       {/* Subtle organic paper grain & water caustics overlay */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-40 mix-blend-multiply transition-opacity duration-700"
+        className="absolute inset-0 pointer-events-none opacity-30 mix-blend-multiply transition-opacity duration-700"
         style={{
           backgroundImage: isMoonlight
             ? 'radial-gradient(circle at 10% 20%, rgba(91, 181, 162, 0.25) 0%, transparent 40%), radial-gradient(circle at 90% 70%, rgba(36, 58, 92, 0.45) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(13, 25, 45, 0.6) 0%, transparent 70%)'
-            : 'radial-gradient(circle at 10% 20%, rgba(242, 213, 205, 0.45) 0%, transparent 40%), radial-gradient(circle at 90% 70%, rgba(140, 189, 181, 0.35) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(217, 190, 145, 0.2) 0%, transparent 70%)',
+            : 'radial-gradient(circle at 10% 20%, rgba(212, 186, 136, 0.35) 0%, transparent 40%), radial-gradient(circle at 90% 70%, rgba(140, 189, 181, 0.25) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(217, 190, 145, 0.2) 0%, transparent 70%)',
         }}
         aria-hidden="true"
       />
@@ -40,28 +38,22 @@ export const StoryJourneySection: React.FC = () => {
         {/* Section Header: Luxury Fairytale Journal Editorial Style */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
           {/* Eyebrow Label with delicate pearl dividers */}
-          <div
-            className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-4 shadow-sm transition-colors ${
-              isMoonlight
-                ? 'bg-[#132238] border-[#2E4968]'
-                : 'bg-[#F2D5CD]/40 border-[#D9BE91]/50'
-            }`}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#8CBDB5]" />
+          <div className="inline-flex items-center gap-2 mb-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D4BA88]" />
             <span
-              className={`font-mono text-[11px] uppercase tracking-[0.22em] font-semibold transition-colors ${
-                isMoonlight ? 'text-[#80CBC4]' : 'text-[#254747]'
+              className={`font-mono text-[11px] uppercase tracking-[0.24em] font-medium transition-colors ${
+                isMoonlight ? 'text-seaglass-300' : 'text-teal-700/80'
               }`}
             >
-              CLEO&apos;S JOURNAL &bull; CHAPTER 01
+              Chapter II &bull; Cleo&apos;s Field Journal
             </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#8CBDB5]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D4BA88]" />
           </div>
 
           <h2
             id="journey-heading"
-            className={`font-display font-medium text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.18] mb-4 transition-colors ${
-              isMoonlight ? 'text-ivory-50' : 'text-[#254747]'
+            className={`font-display italic font-normal text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.18] mb-4 transition-colors ${
+              isMoonlight ? 'text-ivory-50' : 'text-teal-950'
             }`}
           >
             A Story Written by the Sea
@@ -69,7 +61,7 @@ export const StoryJourneySection: React.FC = () => {
 
           <p
             className={`font-body text-base sm:text-lg leading-relaxed max-w-xl mx-auto transition-colors ${
-              isMoonlight ? 'text-seaglass-100/80' : 'text-[#254747]/80'
+              isMoonlight ? 'text-seaglass-100/80' : 'text-teal-800/85'
             }`}
           >
             Turn the pages of Cleo&apos;s seaside journal. Each tidal morning brings a quiet whisper,
@@ -181,106 +173,102 @@ export const StoryJourneySection: React.FC = () => {
 
         {/* -------------------------------------------------------------
             MOMENT 2: A LITTLE GLOW
-            Intimate close-up of a glowing seashell, pearls, and starlight
+            Intimate story discovery spread redesigned as a compact, intentional storybook feature
         ------------------------------------------------------------- */}
         <div className="mb-24 sm:mb-32">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left: Editorial Narrative Typography */}
-            <div className="lg:col-span-5 text-left lg:order-1 order-2 space-y-4">
-              <div className="flex items-center gap-2">
-                <Badge variant="teal" isCollectorStamp className="border-[#8CBDB5]">
-                  Moment 02 &bull; The Discovery
-                </Badge>
-                <span className="font-hand text-xs text-[#D9BE91] font-semibold">
-                  A Gentle Spark
+          <div
+            className={`max-w-4xl mx-auto rounded-[28px] sm:rounded-[36px] p-6 sm:p-10 lg:p-12 border shadow-storybook relative overflow-hidden transition-colors ${
+              isMoonlight
+                ? 'bg-[#0E172A] border-[#2A4365]'
+                : 'bg-[#FFFDF9] border-[#D4BA88]/60'
+            }`}
+          >
+            {/* Subtle warm sunset inner glow */}
+            <div
+              className="absolute -top-10 -right-10 w-72 h-72 rounded-full blur-3xl opacity-20 pointer-events-none"
+              style={{
+                background: isMoonlight
+                  ? 'radial-gradient(circle, rgba(91, 181, 162, 0.4) 0%, transparent 70%)'
+                  : 'radial-gradient(circle, rgba(247, 200, 168, 0.7) 0%, transparent 70%)',
+              }}
+              aria-hidden="true"
+            />
+
+            <div className="relative z-10 space-y-6">
+              {/* Header with Moment Badge and Folio Tag */}
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b pb-4 border-[#D4BA88]/30">
+                <div className="flex items-center gap-2.5">
+                  <Badge variant="teal" isCollectorStamp className="border-[#8CBDB5]">
+                    Moment 02 &bull; The Discovery
+                  </Badge>
+                  <span className="font-hand text-sm text-[#D4BA88] font-semibold">
+                    A Gentle Spark
+                  </span>
+                </div>
+                <span className="font-mono text-[10px] uppercase tracking-widest text-[#D4BA88] font-semibold">
+                  Chapter II &bull; Folio 02
                 </span>
               </div>
 
-              <h3 className="font-display font-medium text-2xl sm:text-3xl lg:text-4xl text-[#254747] tracking-tight leading-tight">
-                A Little Glow
-              </h3>
+              {/* Title & Introduction */}
+              <div>
+                <h3
+                  className={`font-display font-medium text-2xl sm:text-3xl lg:text-4xl tracking-tight leading-tight mb-3 ${
+                    isMoonlight ? 'text-ivory-50' : 'text-[#254747]'
+                  }`}
+                >
+                  A Little Glow
+                </h3>
+                <div className="h-0.5 w-16 bg-[#F2D5CD]" />
+              </div>
 
-              <div className="h-0.5 w-16 bg-[#F2D5CD]" />
+              {/* Narrative Content in 2 balanced editorial columns */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-start">
+                <p
+                  className={`font-body text-sm sm:text-base leading-relaxed ${
+                    isMoonlight ? 'text-seaglass-100/90' : 'text-[#254747]/90'
+                  }`}
+                >
+                  It was not like ordinary seashells. When Cleo gently cradled the spiral nautilus in both hands,
+                  a warm rose-gold iridescence pulsed through its fluted chambers, casting soft amber reflections across her palms.
+                </p>
 
-              <p className="font-body text-sm sm:text-base text-[#254747]/85 leading-relaxed">
-                It was not like ordinary seashells. When Cleo gently cradled the spiral nautilus in both hands,
-                a warm rose-gold iridescence pulsed through its fluted chambers, casting soft amber reflections across her palms.
-              </p>
-
-              <p className="font-body text-sm text-[#254747]/80 leading-relaxed">
-                Tiny luminous pearls hovered like suspended stars. When she drew it close to her ear,
-                she didn&apos;t hear the roar of the tide—she heard sweet melodies echoing from another sky.
-              </p>
-
-              {/* Observation Tag */}
-              <div className="p-4 rounded-2xl bg-[#FFF9F0] border border-[#F2D5CD] shadow-sm">
-                <div className="flex items-center justify-between text-xs font-mono text-[#254747]/75 mb-1">
-                  <span>SPECIMEN NO. 081 &bull; AURORA SHELL</span>
-                  <span className="text-[#F48B76] font-semibold">&bull; Active Luminance</span>
-                </div>
-                <p className="font-hand text-sm sm:text-base text-[#254747]">
-                  &ldquo;If you hold it against your cheek, it hums at the exact temperature of a sleeping star.&rdquo;
+                <p
+                  className={`font-body text-sm sm:text-base leading-relaxed ${
+                    isMoonlight ? 'text-seaglass-100/85' : 'text-[#254747]/85'
+                  }`}
+                >
+                  Tiny luminous pearls hovered like suspended stars. When she drew it close to her ear,
+                  she didn&apos;t hear the roar of the tide—she heard sweet melodies echoing from another sky.
                 </p>
               </div>
-            </div>
 
-            {/* Right: Intimate Illustrated Vignette with Glowing Shell Artwork */}
-            <div className="lg:col-span-7 lg:order-2 order-1 relative group">
+              {/* Fairytale Folio Observation Note */}
               <div
-                className="relative rounded-[32px] sm:rounded-[44px] p-6 sm:p-10 border shadow-storybook-hover overflow-hidden transition-transform duration-700 group-hover:-translate-y-1"
-                style={{
-                  backgroundColor: '#FFFFFF',
-                  borderColor: '#F2D5CD',
-                }}
+                className={`p-4 sm:p-5 rounded-2xl border shadow-xs transition-colors ${
+                  isMoonlight
+                    ? 'bg-[#132238] border-[#2A4365]'
+                    : 'bg-[#FAF7EE] border-[#D4BA88]/60'
+                }`}
               >
-                {/* Radial Aurora Glow centered on shell */}
-                <div
-                  className="absolute inset-0 pointer-events-none opacity-45"
-                  style={{
-                    background:
-                      'radial-gradient(circle at 50% 50%, rgba(247, 200, 168, 0.7) 0%, rgba(242, 213, 205, 0.5) 40%, rgba(140, 189, 181, 0.2) 70%, transparent 95%)',
-                  }}
-                  aria-hidden="true"
-                />
-
-                {/* Floating ambient particles */}
-                <div className="absolute top-6 left-8 pointer-events-none">
-                  <DecorativeStar size={16} color="#F48B76" className="animate-star-shimmer" />
-                </div>
-                <div className="absolute bottom-8 right-10 pointer-events-none">
-                  <DecorativeStar size={20} color="#8CBDB5" className="animate-star-shimmer" />
-                </div>
-                <div className="absolute top-1/2 left-6 pointer-events-none hidden sm:block">
-                  <DecorativeBubble size={16} />
-                </div>
-
-                {/* Central Vignette: Cleo holding the Luminous Shell */}
-                <div className="relative z-10 flex flex-col items-center justify-center py-6 sm:py-8">
-                  {/* Glowing Shell Vessel in Foreground with Celestial Aura */}
-                  <div className="relative flex items-center justify-center">
-                    <div
-                      className="absolute w-44 h-44 rounded-full blur-2xl opacity-60 animate-pulse"
-                      style={{ backgroundColor: '#F7C8A8' }}
-                      aria-hidden="true"
-                    />
-                    <PearlKingdomShellVessel size={200} className="relative z-10 animate-float-gentle" />
-
-                    {/* Surrounding Tiny Floating Pearls */}
-                    <span className="absolute -top-2 left-6 w-4 h-4 rounded-full bg-white border border-[#D9BE91] shadow-md animate-bubble-drift" />
-                    <span
-                      className="absolute top-12 -right-2 w-5 h-5 rounded-full bg-[#FFF9F0] border border-[#8CBDB5] shadow-md animate-bubble-drift"
-                      style={{ animationDelay: '1.2s' }}
-                    />
-                    <span
-                      className="absolute bottom-4 left-4 w-3.5 h-3.5 rounded-full bg-[#F2D5CD] border border-white shadow-md animate-bubble-drift"
-                      style={{ animationDelay: '2.4s' }}
-                    />
+                <div className="flex items-center justify-between text-xs font-mono mb-2 pb-1.5 border-b border-[#D4BA88]/30">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] uppercase tracking-widest text-[#D4BA88] font-semibold">
+                      Cleo&apos;s Field Note &bull; Acoustic Discovery
+                    </span>
+                    <DecorativeStar size={11} color="#D4BA88" />
                   </div>
-
-                  <span className="mt-4 font-mono text-[10px] uppercase tracking-widest text-[#254747]/70">
-                    The First Whisper &bull; Nautilus of the Outer Depths
+                  <span className="text-[#DE6B54] font-semibold text-[10px] uppercase tracking-wider">
+                    &bull; Whispering Chamber
                   </span>
                 </div>
+                <p
+                  className={`font-hand text-base sm:text-lg leading-relaxed ${
+                    isMoonlight ? 'text-ivory-100' : 'text-teal-950'
+                  }`}
+                >
+                  &ldquo;If you hold it against your cheek, it hums at the exact temperature of a sleeping star.&rdquo;
+                </p>
               </div>
             </div>
           </div>
@@ -288,15 +276,15 @@ export const StoryJourneySection: React.FC = () => {
 
         {/* -------------------------------------------------------------
             MOMENT 3: WORLDS WITHIN
-            Three miniature illustrated scenes emerging from a shell
+            Three immersive illustrated fairytale worlds emerging from a shell
         ------------------------------------------------------------- */}
         <div className="mb-24 sm:mb-32">
           <div
-            className="rounded-[28px] sm:rounded-[48px] p-4 sm:p-10 lg:p-14 border shadow-storybook relative overflow-hidden"
-            style={{
-              backgroundColor: '#FFFFFF',
-              borderColor: '#8CBDB5',
-            }}
+            className={`rounded-[28px] sm:rounded-[44px] p-5 sm:p-10 lg:p-12 border shadow-storybook relative overflow-hidden transition-colors ${
+              isMoonlight
+                ? 'bg-[#0E172A] border-[#2A4365]'
+                : 'bg-[#FFFFFF] border-[#8CBDB5]'
+            }`}
           >
             {/* Soft decorative background tint */}
             <div
@@ -308,133 +296,226 @@ export const StoryJourneySection: React.FC = () => {
               aria-hidden="true"
             />
 
-            <div className="relative z-10 max-w-4xl mx-auto text-center mb-8 sm:mb-10">
+            <div className="relative z-10 max-w-4xl mx-auto text-center mb-8 sm:mb-12">
               <Badge variant="seaglass" isCollectorStamp className="border-[#8CBDB5] mb-3">
                 Moment 03 &bull; The Three Horizons
               </Badge>
-              <h3 className="font-display font-medium text-2xl sm:text-3xl lg:text-4xl text-[#254747] tracking-tight leading-tight mb-3">
+              <h3
+                className={`font-display font-medium text-2xl sm:text-3xl lg:text-4xl tracking-tight leading-tight mb-3 ${
+                  isMoonlight ? 'text-ivory-50' : 'text-[#254747]'
+                }`}
+              >
                 Worlds Within
               </h3>
-              <p className="font-body text-sm sm:text-base text-[#254747]/85 max-w-xl mx-auto leading-relaxed">
+              <p
+                className={`font-body text-sm sm:text-base max-w-xl mx-auto leading-relaxed ${
+                  isMoonlight ? 'text-seaglass-100/85' : 'text-[#254747]/85'
+                }`}
+              >
                 As Cleo tipped the shell toward the sunlight, three miniature universes unfolded into view—each
                 self-contained, living, and breathing with its own sky.
               </p>
             </div>
 
-            {/* Three Miniature Illustrated Windows Emerging on Arched Ribbons */}
-            <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8 items-stretch mb-8">
-              {/* World Window 1: Pearl Kingdom */}
+            {/* Three Illustrated Fairytale World Pages */}
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch mb-8">
+              {/* World Card 1: Pearl Kingdom */}
               <div
                 onClick={() => setActiveMiniWorld('pearl')}
-                className={`group relative p-4 sm:p-5 rounded-2xl sm:rounded-3xl border transition-all duration-300 cursor-pointer text-left flex flex-col justify-between ${
+                className={`group relative rounded-2xl sm:rounded-3xl border transition-all duration-500 cursor-pointer text-left flex flex-col justify-between overflow-hidden ${
                   activeMiniWorld === 'pearl'
-                    ? 'bg-[#EAF7F4] border-[#8CBDB5] shadow-storybook scale-[1.02]'
-                    : 'bg-[#FFF9F0]/70 border-[#D9BE91]/40 hover:border-[#8CBDB5]'
-                }`}
+                    ? isMoonlight
+                      ? 'bg-[#132238] border-seaglass-400 shadow-night ring-2 ring-seaglass-400/40'
+                      : 'bg-[#FFFDF9] border-[#0C5A60] shadow-storybook ring-2 ring-[#8CBDB5]/50'
+                    : isMoonlight
+                      ? 'bg-[#0A1220]/80 border-[#1E3048] hover:border-seaglass-400/60 shadow-sm'
+                      : 'bg-[#FFFDF9] border-[#D9BE91]/50 hover:border-teal-700/50 shadow-xs hover:shadow-storybook'
+                } hover:-translate-y-1`}
               >
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-[#0C5A60] font-semibold">
-                      Horizon I &bull; Depths
-                    </span>
-                    <span className="w-2 h-2 rounded-full bg-[#5BB5A2]" />
+                {/* Upper Half: Generously Sized Illustration */}
+                <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#FAF7EE] border-b border-[#D4BA88]/30">
+                  <img
+                    src={pearlKingdomImg}
+                    alt="Underwater Pearl Kingdom shell palace with luminous towers, coral gardens, and glowing pearls"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-104"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  {/* Subtle storybook gradient vignette */}
+                  <div
+                    className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-70 group-hover:opacity-40 transition-opacity duration-500"
+                    aria-hidden="true"
+                  />
+                  {/* Horizon Badge pill */}
+                  <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 py-0.5 px-2.5 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-white text-[10px] font-mono uppercase tracking-wider shadow-xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#55D1C5]" />
+                    <span>Horizon I &bull; Depths</span>
                   </div>
-
-                  <div className="w-24 h-24 mx-auto my-2 flex items-center justify-center transition-transform group-hover:scale-110">
-                    <PearlKingdomShellVessel size={90} />
-                  </div>
-
-                  <h4 className="font-display font-bold text-lg text-[#254747] text-center mb-2">
-                    The Pearl Kingdom
-                  </h4>
-                  <p className="font-body text-xs text-[#254747]/80 leading-relaxed text-center">
-                    A sunken realm where coral towers support bioluminescent kelp domes and fairy fish swim in rings.
-                  </p>
                 </div>
 
-                <div className="pt-3 border-t border-[#8CBDB5]/20 text-[11px] font-hand text-center text-[#0C5A60]">
-                  &ldquo;Home to Barnaby the courier crab&rdquo;
+                {/* Lower Half: Title, Description & Small Distinctive Detail */}
+                <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+                  <div>
+                    <h4
+                      className={`font-display font-medium text-xl sm:text-2xl mb-2 transition-colors ${
+                        isMoonlight
+                          ? 'text-ivory-50 group-hover:text-seaglass-300'
+                          : 'text-[#254747] group-hover:text-teal-700'
+                      }`}
+                    >
+                      The Pearl Kingdom
+                    </h4>
+                    <p
+                      className={`font-body text-xs sm:text-sm leading-relaxed ${
+                        isMoonlight ? 'text-seaglass-100/80' : 'text-[#254747]/80'
+                      }`}
+                    >
+                      A sunken realm where luminous coral towers support pearlescent arches and friendly fairy fish glide through turquoise waters.
+                    </p>
+                  </div>
+
+                  <div className="pt-3 border-t border-[#8CBDB5]/20 flex items-center justify-between text-[11px] font-hand text-[#0C5A60] dark:text-seaglass-300">
+                    <span>&ldquo;Home to Barnaby the courier crab&rdquo;</span>
+                    <span className="text-[10px] font-mono text-[#D4BA88] uppercase tracking-wider font-semibold">Folio 01</span>
+                  </div>
                 </div>
               </div>
 
-              {/* World Window 2: Cloud Village */}
+              {/* World Card 2: Cloud Village */}
               <div
                 onClick={() => setActiveMiniWorld('cloud')}
-                className={`group relative p-4 sm:p-5 rounded-2xl sm:rounded-3xl border transition-all duration-300 cursor-pointer text-left flex flex-col justify-between ${
+                className={`group relative rounded-2xl sm:rounded-3xl border transition-all duration-500 cursor-pointer text-left flex flex-col justify-between overflow-hidden ${
                   activeMiniWorld === 'cloud'
-                    ? 'bg-[#F2EDF8] border-[#C5B4E3] shadow-storybook scale-[1.02]'
-                    : 'bg-[#FFF9F0]/70 border-[#D9BE91]/40 hover:border-[#C5B4E3]'
-                }`}
+                    ? isMoonlight
+                      ? 'bg-[#132238] border-[#C5B4E3] shadow-night ring-2 ring-[#C5B4E3]/40'
+                      : 'bg-[#FFFDF9] border-[#7A5B9C] shadow-storybook ring-2 ring-[#C5B4E3]/50'
+                    : isMoonlight
+                      ? 'bg-[#0A1220]/80 border-[#1E3048] hover:border-[#C5B4E3]/60 shadow-sm'
+                      : 'bg-[#FFFDF9] border-[#D9BE91]/50 hover:border-[#7A5B9C]/50 shadow-xs hover:shadow-storybook'
+                } hover:-translate-y-1`}
               >
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-[#583F72] font-semibold">
-                      Horizon II &bull; Zephyr
-                    </span>
-                    <span className="w-2 h-2 rounded-full bg-[#C5B4E3]" />
+                {/* Upper Half: Generously Sized Illustration */}
+                <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#FAF7EE] border-b border-[#D4BA88]/30">
+                  <img
+                    src={cloudVillageImg}
+                    alt="Dreamy Cloud Village floating sky islands with pastel cottages, fluffy clouds, bridges, and lanterns"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-104"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  {/* Subtle storybook gradient vignette */}
+                  <div
+                    className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-70 group-hover:opacity-40 transition-opacity duration-500"
+                    aria-hidden="true"
+                  />
+                  {/* Horizon Badge pill */}
+                  <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 py-0.5 px-2.5 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-white text-[10px] font-mono uppercase tracking-wider shadow-xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#C5B4E3]" />
+                    <span>Horizon II &bull; Zephyr</span>
                   </div>
-
-                  <div className="w-24 h-24 mx-auto my-2 flex items-center justify-center transition-transform group-hover:scale-110">
-                    <CloudVillageShellVessel size={90} />
-                  </div>
-
-                  <h4 className="font-display font-bold text-lg text-[#254747] text-center mb-2">
-                    The Cloud Village
-                  </h4>
-                  <p className="font-body text-xs text-[#254747]/80 leading-relaxed text-center">
-                    Airborne meadow islands connected by rope bridges, where windmills churn evening breeze into cotton candy.
-                  </p>
                 </div>
 
-                <div className="pt-3 border-t border-[#C5B4E3]/30 text-[11px] font-hand text-center text-[#583F72]">
-                  &ldquo;Rooftop windmills spinning sea-silk&rdquo;
+                {/* Lower Half: Title, Description & Small Distinctive Detail */}
+                <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+                  <div>
+                    <h4
+                      className={`font-display font-medium text-xl sm:text-2xl mb-2 transition-colors ${
+                        isMoonlight
+                          ? 'text-ivory-50 group-hover:text-[#D5C6F0]'
+                          : 'text-[#254747] group-hover:text-[#583F72]'
+                      }`}
+                    >
+                      The Cloud Village
+                    </h4>
+                    <p
+                      className={`font-body text-xs sm:text-sm leading-relaxed ${
+                        isMoonlight ? 'text-seaglass-100/80' : 'text-[#254747]/80'
+                      }`}
+                    >
+                      Airborne meadow islands connected by wooden bridges, where pastel cottages and windmills churn gentle breezes into sweet sky blossom mist.
+                    </p>
+                  </div>
+
+                  <div className="pt-3 border-t border-[#C5B4E3]/30 flex items-center justify-between text-[11px] font-hand text-[#583F72] dark:text-[#D5C6F0]">
+                    <span>&ldquo;Windmills spinning sea-silk mist&rdquo;</span>
+                    <span className="text-[10px] font-mono text-[#D4BA88] uppercase tracking-wider font-semibold">Folio 02</span>
+                  </div>
                 </div>
               </div>
 
-              {/* World Window 3: Dinosaur Garden */}
+              {/* World Card 3: Dinosaur Garden */}
               <div
                 onClick={() => setActiveMiniWorld('dino')}
-                className={`group relative p-4 sm:p-5 rounded-2xl sm:rounded-3xl border transition-all duration-300 cursor-pointer text-left flex flex-col justify-between ${
+                className={`group relative rounded-2xl sm:rounded-3xl border transition-all duration-500 cursor-pointer text-left flex flex-col justify-between overflow-hidden ${
                   activeMiniWorld === 'dino'
-                    ? 'bg-[#F2F8ED] border-[#7BB89A] shadow-storybook scale-[1.02]'
-                    : 'bg-[#FFF9F0]/70 border-[#D9BE91]/40 hover:border-[#7BB89A]'
-                }`}
+                    ? isMoonlight
+                      ? 'bg-[#132238] border-[#7BB89A] shadow-night ring-2 ring-[#7BB89A]/40'
+                      : 'bg-[#FFFDF9] border-[#386B52] shadow-storybook ring-2 ring-[#7BB89A]/50'
+                    : isMoonlight
+                      ? 'bg-[#0A1220]/80 border-[#1E3048] hover:border-[#7BB89A]/60 shadow-sm'
+                      : 'bg-[#FFFDF9] border-[#D9BE91]/50 hover:border-[#386B52]/50 shadow-xs hover:shadow-storybook'
+                } hover:-translate-y-1`}
               >
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-[#386B52] font-semibold">
-                      Horizon III &bull; Haven
-                    </span>
-                    <span className="w-2 h-2 rounded-full bg-[#7BB89A]" />
+                {/* Upper Half: Generously Sized Illustration */}
+                <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#FAF7EE] border-b border-[#D4BA88]/30">
+                  <img
+                    src={dinosaurGardenImg}
+                    alt="Lush Dinosaur Garden conservatory with friendly baby sauropod, baby triceratops, waterfalls, and tropical flora"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-104"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  {/* Subtle storybook gradient vignette */}
+                  <div
+                    className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-70 group-hover:opacity-40 transition-opacity duration-500"
+                    aria-hidden="true"
+                  />
+                  {/* Horizon Badge pill */}
+                  <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 py-0.5 px-2.5 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-white text-[10px] font-mono uppercase tracking-wider shadow-xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#7BB89A]" />
+                    <span>Horizon III &bull; Haven</span>
                   </div>
-
-                  <div className="w-24 h-24 mx-auto my-2 flex items-center justify-center transition-transform group-hover:scale-110">
-                    <DinosaurGardenShellVessel size={90} />
-                  </div>
-
-                  <h4 className="font-display font-bold text-lg text-[#254747] text-center mb-2">
-                    The Dinosaur Garden
-                  </h4>
-                  <p className="font-body text-xs text-[#254747]/80 leading-relaxed text-center">
-                    A prehistoric sunlit garden where gentle baby sauropods graze on watercress beside crystal brooks.
-                  </p>
                 </div>
 
-                <div className="pt-3 border-t border-[#7BB89A]/30 text-[11px] font-hand text-center text-[#386B52]">
-                  &ldquo;Pip balancing buttercup garlands&rdquo;
+                {/* Lower Half: Title, Description & Small Distinctive Detail */}
+                <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+                  <div>
+                    <h4
+                      className={`font-display font-medium text-xl sm:text-2xl mb-2 transition-colors ${
+                        isMoonlight
+                          ? 'text-ivory-50 group-hover:text-[#99D4B5]'
+                          : 'text-[#254747] group-hover:text-[#386B52]'
+                      }`}
+                    >
+                      The Dinosaur Garden
+                    </h4>
+                    <p
+                      className={`font-body text-xs sm:text-sm leading-relaxed ${
+                        isMoonlight ? 'text-seaglass-100/80' : 'text-[#254747]/80'
+                      }`}
+                    >
+                      A sunlit prehistoric conservatory where gentle baby dinosaurs graze beside crystal waterfalls and sparkling streams.
+                    </p>
+                  </div>
+
+                  <div className="pt-3 border-t border-[#7BB89A]/30 flex items-center justify-between text-[11px] font-hand text-[#386B52] dark:text-[#99D4B5]">
+                    <span>&ldquo;Pip balancing buttercup garlands&rdquo;</span>
+                    <span className="text-[10px] font-mono text-[#D4BA88] uppercase tracking-wider font-semibold">Folio 03</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Poetic synthesis caption */}
             <div className="relative z-10 max-w-lg mx-auto text-center pt-4 border-t border-[#D9BE91]/40">
-              <p className="font-hand text-sm sm:text-base text-[#254747]/90 leading-snug">
+              <p className="font-hand text-sm sm:text-base text-[#254747]/90 dark:text-seaglass-100/90 leading-snug">
                 &ldquo;One held an ocean under the ocean. One held windmills in lavender sky.
                 And one hid gentle giants who only ate buttercups. All smaller than a teacup.&rdquo;
               </p>
             </div>
           </div>
         </div>
+
 
         {/* -------------------------------------------------------------
             MOMENT 4: BEYOND THE HORIZON

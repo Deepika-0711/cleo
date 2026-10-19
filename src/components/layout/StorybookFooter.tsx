@@ -25,7 +25,7 @@ export const StorybookFooter: React.FC = () => {
       aria-label="The Last Page of Cleo’s Story"
       className="relative pt-20 sm:pt-28 pb-16 overflow-hidden transition-colors duration-700 border-t"
       style={{
-        backgroundColor: isMoonlight ? '#09111E' : '#FAF7EE',
+        backgroundColor: 'transparent',
         borderColor: isMoonlight ? 'rgba(42, 67, 101, 0.4)' : 'rgba(212, 186, 136, 0.35)',
         color: isMoonlight ? '#FDFAF5' : '#0C5A60',
       }}
@@ -75,11 +75,13 @@ export const StorybookFooter: React.FC = () => {
             </div>
           </div>
 
-          {/* Miniature pearl divider */}
-          <div className="flex items-center gap-2 mt-4 text-xs font-mono uppercase tracking-[0.24em] opacity-75">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D4BA88]" />
+          {/* Miniature pearl divider with star glints */}
+          <div className="flex items-center gap-2 mt-4 text-xs font-mono uppercase tracking-[0.24em] opacity-80">
+            <span className="w-1.5 h-1.5 rounded-full bg-white border border-[#D4BA88] shadow-xs" />
+            <DecorativeStar size={7} color="#D4BA88" />
             <span className={isMoonlight ? 'text-seaglass-300' : 'text-[#D4BA88]'}>THE LAST PAGE</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D4BA88]" />
+            <DecorativeStar size={7} color="#D4BA88" />
+            <span className="w-1.5 h-1.5 rounded-full bg-white border border-[#D4BA88] shadow-xs" />
           </div>
         </div>
 
@@ -125,8 +127,8 @@ export const StorybookFooter: React.FC = () => {
             aria-label="Back to the beginning of Cleo's storybook"
             className={`inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wide border shadow-xs transition-all duration-300 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 ${
               isMoonlight
-                ? 'bg-midnight-900/90 text-seaglass-200 border-[#2A4365] hover:bg-midnight-800 hover:border-seaglass-400 shadow-night'
-                : 'bg-white text-teal-950 border-[#D4BA88]/60 hover:bg-[#FAF7EE] hover:border-teal-700 shadow-storybook'
+                ? 'bg-midnight-900/90 text-seaglass-200 border-[#D4BA88]/40 hover:bg-midnight-800 hover:border-[#80DEEA] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(91,181,162,0.3)] shadow-night'
+                : 'bg-gradient-to-r from-[#FFFDF9] via-[#FAF5F2] to-[#FFFDF9] text-teal-950 border border-[#D4BA88]/70 hover:bg-white hover:border-[#E2A79B] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(226,167,155,0.35)] shadow-storybook'
             }`}
           >
             <ShellIcon

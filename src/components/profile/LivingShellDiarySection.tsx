@@ -12,7 +12,7 @@ export const LivingShellDiarySection: React.FC = () => {
       id="about"
       aria-labelledby="meet-cleo-heading"
       className="relative scroll-mt-20 py-20 sm:py-28 lg:py-32 overflow-hidden transition-colors duration-700"
-      style={{ backgroundColor: isMoonlight ? '#09101E' : '#FAF7EE' }}
+      style={{ backgroundColor: 'transparent' }}
     >
       {/* Soft ambient water & paper gradient wash */}
       <div
@@ -29,7 +29,8 @@ export const LivingShellDiarySection: React.FC = () => {
         {/* Section Eyebrow */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <div className="inline-flex items-center gap-2 mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D4BA88]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-white border border-[#D4BA88] shadow-xs" />
+            <DecorativeStar size={8} color="#D4BA88" />
             <span
               className={`font-mono text-[11px] uppercase tracking-[0.24em] font-medium transition-colors ${
                 isMoonlight ? 'text-seaglass-300' : 'text-teal-700/80'
@@ -37,7 +38,8 @@ export const LivingShellDiarySection: React.FC = () => {
             >
               Chapter III &bull; Character Introduction
             </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D4BA88]" />
+            <DecorativeStar size={8} color="#D4BA88" />
+            <span className="w-1.5 h-1.5 rounded-full bg-white border border-[#D4BA88] shadow-xs" />
           </div>
 
           <h2

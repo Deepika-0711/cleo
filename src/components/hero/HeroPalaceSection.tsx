@@ -71,7 +71,7 @@ export const HeroPalaceSection: React.FC = () => {
       aria-label="Enchanted Beach, Seashell Palace, and Cleo Character Hero"
       className="relative pt-6 sm:pt-10 pb-16 sm:pb-20 overflow-hidden transition-colors duration-700"
       style={{
-        backgroundColor: isMoonlight ? '#0B1124' : '#FAF7EE',
+        backgroundColor: 'transparent',
         color: isMoonlight ? '#FDFAF5' : '#0C5A60',
       }}
     >
@@ -89,9 +89,10 @@ export const HeroPalaceSection: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Narrative Header & Lead */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-          {/* Poetic Chapter Eyebrow */}
+          {/* Poetic Chapter Eyebrow with Pearl Studs & Star Glints */}
           <div className="inline-flex items-center gap-2 mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D4BA88]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-white border border-[#D4BA88] shadow-xs" />
+            <DecorativeStar size={8} color="#D4BA88" />
             <span
               className={`font-mono text-[11px] uppercase tracking-[0.24em] font-medium transition-colors ${
                 isMoonlight ? 'text-seaglass-300' : 'text-teal-700/80'
@@ -99,7 +100,8 @@ export const HeroPalaceSection: React.FC = () => {
             >
               Prologue &bull; An Enchanted Shoreline
             </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D4BA88]" />
+            <DecorativeStar size={8} color="#D4BA88" />
+            <span className="w-1.5 h-1.5 rounded-full bg-white border border-[#D4BA88] shadow-xs" />
           </div>
 
           {/* Main Storybook Title */}
@@ -121,36 +123,39 @@ export const HeroPalaceSection: React.FC = () => {
             a grand palace fashioned entirely from pearlescent shells, living coral, and glowing sea-glass.
           </p>
 
-          {/* Functional Editorial Navigation Actions */}
+          {/* Functional Editorial Navigation Actions - Princess Fairytale Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 mb-2">
             <a
               href="#collection"
-              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wide bg-teal-850 text-ivory-50 hover:bg-teal-700 active:scale-[0.98] transition-all border border-[#D4BA88]/40 shadow-storybook hover:shadow-storybook-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 focus-visible:ring-offset-2"
-              style={{ backgroundColor: '#0C5A60' }}
+              className={`inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all border focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-400 focus-visible:ring-offset-2 active:scale-[0.98] ${
+                isMoonlight
+                  ? 'bg-gradient-to-r from-[#172544] via-[#1E3054] to-[#172544] text-ivory-50 border-[#D4BA88]/60 shadow-night hover:border-[#80DEEA] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(91,181,162,0.3)]'
+                  : 'bg-gradient-to-r from-[#FFF0EC] via-[#FFF7F2] to-[#FDF0EB] text-teal-950 border-[#E2A79B]/80 shadow-[0_4px_16px_rgba(226,167,155,0.28),0_2px_6px_rgba(212,186,136,0.15)] hover:border-[#DE6B54] hover:shadow-[0_8px_24px_rgba(226,167,155,0.42)] hover:-translate-y-0.5'
+              }`}
             >
-              <ShellIcon variant="nautilus" size={17} color="#FAF7EE" accentColor="#D4BA88" />
+              <ShellIcon variant="nautilus" size={17} color={isMoonlight ? '#FAF7EE' : '#0C5A60'} accentColor="#D4BA88" />
               <span>Explore the Shell Worlds</span>
               <span aria-hidden="true" className="text-[#D4BA88]">&rarr;</span>
             </a>
 
             <a
               href="#journey"
-              className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all border focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 ${
+              className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all border focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 active:scale-[0.98] ${
                 isMoonlight
-                  ? 'bg-midnight-900/80 text-seaglass-200 border-midnight-700 hover:bg-midnight-800'
-                  : 'bg-white/80 text-teal-900 border-[#D4BA88]/50 hover:bg-white hover:border-teal-700'
+                  ? 'bg-midnight-900/90 text-seaglass-200 border-midnight-700 hover:bg-midnight-800 hover:border-[#D4BA88]/60 hover:-translate-y-0.5 shadow-sm'
+                  : 'bg-[#FFFDF9]/95 text-teal-900 border-[#D4BA88]/65 hover:bg-white hover:border-[#D4BA88] hover:-translate-y-0.5 shadow-sm hover:shadow-[0_6px_20px_rgba(212,186,136,0.25)]'
               }`}
             >
-              <DecorativeStar size={12} color="#D4BA88" />
+              <DecorativeStar size={11} color="#D4BA88" />
               <span>Read Cleo’s Story</span>
             </a>
 
             <a
               href="#about"
-              className={`inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 ${
+              className={`inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider transition-all border focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 active:scale-[0.98] ${
                 isMoonlight
-                  ? 'text-seaglass-300 hover:text-white'
-                  : 'text-teal-800/80 hover:text-teal-950'
+                  ? 'text-seaglass-300 border-transparent hover:border-midnight-700 hover:bg-midnight-900/60 hover:text-white'
+                  : 'text-teal-800/80 border-transparent hover:border-[#E2A79B]/50 hover:bg-white/70 hover:text-teal-950 hover:-translate-y-0.5'
               }`}
             >
               <span>Character Profile</span>

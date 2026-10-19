@@ -21,7 +21,7 @@ export const StoryJourneySection: React.FC = () => {
       id="journey"
       aria-labelledby="journey-heading"
       className="relative scroll-mt-20 py-20 sm:py-28 lg:py-32 overflow-hidden transition-colors duration-700"
-      style={{ backgroundColor: isMoonlight ? '#09111E' : '#FAF7EE' }}
+      style={{ backgroundColor: 'transparent' }}
     >
       {/* Subtle organic paper grain & water caustics overlay */}
       <div
@@ -37,9 +37,10 @@ export const StoryJourneySection: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header: Luxury Fairytale Journal Editorial Style */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
-          {/* Eyebrow Label with delicate pearl dividers */}
+          {/* Eyebrow Label with delicate pearl dividers & star glints */}
           <div className="inline-flex items-center gap-2 mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D4BA88]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-white border border-[#D4BA88] shadow-xs" />
+            <DecorativeStar size={8} color="#D4BA88" />
             <span
               className={`font-mono text-[11px] uppercase tracking-[0.24em] font-medium transition-colors ${
                 isMoonlight ? 'text-seaglass-300' : 'text-teal-700/80'
@@ -47,7 +48,8 @@ export const StoryJourneySection: React.FC = () => {
             >
               Chapter II &bull; Cleo&apos;s Field Journal
             </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D4BA88]" />
+            <DecorativeStar size={8} color="#D4BA88" />
+            <span className="w-1.5 h-1.5 rounded-full bg-white border border-[#D4BA88] shadow-xs" />
           </div>
 
           <h2
@@ -333,11 +335,11 @@ export const StoryJourneySection: React.FC = () => {
                 } hover:-translate-y-1`}
               >
                 {/* Upper Half: Generously Sized Illustration */}
-                <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#FAF7EE] border-b border-[#D4BA88]/30">
+                <div className="relative w-full aspect-[16/11] overflow-hidden bg-[#FAF7EE] border-b border-[#D4BA88]/30">
                   <img
                     src={pearlKingdomImg}
                     alt="Underwater Pearl Kingdom shell palace with luminous towers, coral gardens, and glowing pearls"
-                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-104"
+                    className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-104"
                     loading="lazy"
                     decoding="async"
                   />
@@ -363,7 +365,7 @@ export const StoryJourneySection: React.FC = () => {
                           : 'text-[#254747] group-hover:text-teal-700'
                       }`}
                     >
-                      The Pearl Kingdom
+                      Pearl Kingdom
                     </h4>
                     <p
                       className={`font-body text-xs sm:text-sm leading-relaxed ${
@@ -375,7 +377,7 @@ export const StoryJourneySection: React.FC = () => {
                   </div>
 
                   <div className="pt-3 border-t border-[#8CBDB5]/20 flex items-center justify-between text-[11px] font-hand text-[#0C5A60] dark:text-seaglass-300">
-                    <span>&ldquo;Home to Barnaby the courier crab&rdquo;</span>
+                    <span>&ldquo;Where kindness makes the magic glow&rdquo;</span>
                     <span className="text-[10px] font-mono text-[#D4BA88] uppercase tracking-wider font-semibold">Folio 01</span>
                   </div>
                 </div>
@@ -395,11 +397,11 @@ export const StoryJourneySection: React.FC = () => {
                 } hover:-translate-y-1`}
               >
                 {/* Upper Half: Generously Sized Illustration */}
-                <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#FAF7EE] border-b border-[#D4BA88]/30">
+                <div className="relative w-full aspect-[16/11] overflow-hidden bg-[#FAF7EE] border-b border-[#D4BA88]/30">
                   <img
                     src={cloudVillageImg}
                     alt="Dreamy Cloud Village floating sky islands with pastel cottages, fluffy clouds, bridges, and lanterns"
-                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-104"
+                    className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-104"
                     loading="lazy"
                     decoding="async"
                   />
@@ -425,7 +427,7 @@ export const StoryJourneySection: React.FC = () => {
                           : 'text-[#254747] group-hover:text-[#583F72]'
                       }`}
                     >
-                      The Cloud Village
+                      Cloud Village
                     </h4>
                     <p
                       className={`font-body text-xs sm:text-sm leading-relaxed ${
@@ -437,7 +439,7 @@ export const StoryJourneySection: React.FC = () => {
                   </div>
 
                   <div className="pt-3 border-t border-[#C5B4E3]/30 flex items-center justify-between text-[11px] font-hand text-[#583F72] dark:text-[#D5C6F0]">
-                    <span>&ldquo;Windmills spinning sea-silk mist&rdquo;</span>
+                    <span>&ldquo;Where dreams turn into little stars&rdquo;</span>
                     <span className="text-[10px] font-mono text-[#D4BA88] uppercase tracking-wider font-semibold">Folio 02</span>
                   </div>
                 </div>
@@ -457,11 +459,11 @@ export const StoryJourneySection: React.FC = () => {
                 } hover:-translate-y-1`}
               >
                 {/* Upper Half: Generously Sized Illustration */}
-                <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#FAF7EE] border-b border-[#D4BA88]/30">
+                <div className="relative w-full aspect-[16/11] overflow-hidden bg-[#FAF7EE] border-b border-[#D4BA88]/30">
                   <img
                     src={dinosaurGardenImg}
                     alt="Lush Dinosaur Garden conservatory with friendly baby sauropod, baby triceratops, waterfalls, and tropical flora"
-                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-104"
+                    className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-104"
                     loading="lazy"
                     decoding="async"
                   />
@@ -499,7 +501,7 @@ export const StoryJourneySection: React.FC = () => {
                   </div>
 
                   <div className="pt-3 border-t border-[#7BB89A]/30 flex items-center justify-between text-[11px] font-hand text-[#386B52] dark:text-[#99D4B5]">
-                    <span>&ldquo;Pip balancing buttercup garlands&rdquo;</span>
+                    <span>&ldquo;Kindness helps everything grow&rdquo;</span>
                     <span className="text-[10px] font-mono text-[#D4BA88] uppercase tracking-wider font-semibold">Folio 03</span>
                   </div>
                 </div>

@@ -172,13 +172,215 @@ body {
   animation: pearlPulse 3.5s ease-in-out infinite;
 }
 
+/* Underwater Fairytale Floating Bubbles */
+@keyframes bubbleFloatUp {
+  0% {
+    transform: translateY(5vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--target-bubble-opacity, 0.75);
+  }
+  65% {
+    opacity: var(--target-bubble-opacity, 0.75);
+  }
+  85% {
+    opacity: calc(var(--target-bubble-opacity, 0.75) * 0.4);
+  }
+  100% {
+    transform: translateY(-115vh);
+    opacity: 0;
+  }
+}
+
+@keyframes bubbleWobbleSway {
+  0% {
+    transform: translateX(calc(var(--wobble-x, 10px) * -0.5));
+  }
+  100% {
+    transform: translateX(calc(var(--wobble-x, 10px) * 0.5));
+  }
+}
+
+/* Princess Fairytale Sparkle Twinkle */
+@keyframes sparkleTwinkle {
+  0% {
+    transform: scale(0.2) rotate(0deg);
+    opacity: 0;
+  }
+  35% {
+    transform: scale(1.18) rotate(14deg);
+    opacity: var(--sparkle-target-opacity, 0.9);
+  }
+  55% {
+    transform: scale(0.96) rotate(20deg);
+    opacity: var(--sparkle-target-opacity, 0.9);
+  }
+  80% {
+    transform: scale(1.05) rotate(26deg);
+    opacity: calc(var(--sparkle-target-opacity, 0.9) * 0.55);
+  }
+  100% {
+    transform: scale(0.2) rotate(40deg);
+    opacity: 0;
+  }
+}
+
+/* Cleo Living Fairytale Character Animations */
+@keyframes cleoFloatRelaxed {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(0.4deg);
+  }
+}
+
+.animate-cleo-float {
+  animation: cleoFloatRelaxed 6.5s ease-in-out infinite;
+}
+
+/* Three Enchanted Worlds Magic Keyframes */
+@keyframes fairytaleModalEnter {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-fairytale-modal {
+  animation: fairytaleModalEnter 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes dreamyFloatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-dreamy-float {
+  animation: dreamyFloatSlow 6s ease-in-out infinite;
+}
+
+@keyframes cardMiniBubble {
+  0% {
+    transform: translateY(8px) translateX(0);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-44px) translateX(3px);
+    opacity: 0;
+  }
+}
+
+.animate-card-mini-bubble {
+  animation: cardMiniBubble 5s ease-in-out infinite;
+}
+
+@keyframes cloudStarGlint {
+  0%, 100% {
+    transform: scale(0.3) rotate(0deg);
+    opacity: 0;
+  }
+  40%, 60% {
+    transform: scale(1.1) rotate(15deg);
+    opacity: 0.95;
+  }
+}
+
+.animate-cloud-star-glint {
+  animation: cloudStarGlint 4.5s ease-in-out infinite;
+}
+
+@keyframes gardenSporeDrift {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(0.9);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translateY(-4px) rotate(12deg) scale(1.1);
+    opacity: 0.9;
+  }
+}
+
+.animate-garden-spore {
+  animation: gardenSporeDrift 5s ease-in-out infinite;
+}
+
+@keyframes pearlGlowPulse {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(85, 209, 197, 0.25), inset 0 0 8px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(85, 209, 197, 0.45), inset 0 0 14px rgba(255, 255, 255, 0.8);
+  }
+}
+
+.animate-pearl-glow {
+  animation: pearlGlowPulse 4s ease-in-out infinite;
+}
+
+/* Unobtrusive luxury storybook scrollbar */
+.storybook-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(212, 186, 136, 0.4) transparent;
+}
+
+.storybook-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.storybook-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.storybook-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(212, 186, 136, 0.4);
+  border-radius: 9999px;
+}
+
+.storybook-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(191, 159, 101, 0.7);
+}
+
 /* Accessibility: Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-  *,
+  .magical-bubble-stream > div {
+    animation-duration: 28s !important;
+  }
+  .magical-bubble-stream > div > div {
+    animation: none !important;
+  }
+  .magical-sparkle-item {
+    animation-duration: 7s !important;
+    transform: none !important;
+  }
+  .animate-cleo-float,
+  .animate-fairytale-modal,
+  .animate-dreamy-float,
+  .animate-card-mini-bubble,
+  .animate-cloud-star-glint,
+  .animate-garden-spore,
+  .animate-pearl-glow {
+    animation: none !important;
+  }
+
+  *:not(.magical-bubble-stream):not(.magical-bubble-stream *),
   ::before,
   ::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
